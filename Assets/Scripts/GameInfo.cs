@@ -3,43 +3,36 @@ using System.Collections;
 
 public class GameInfo : MonoBehaviour {
 
-	private const int initialLifeNum = 3;
+	private static bool released = false;
 
-	private int lifeNum;
-	private int brickNum;
+	private static int lifeNum = 3;
+	private static int score = 0;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public static bool Released { 
+		get{ return released;}
+		set{ released = value;}
 	}
 
-	public int BrickNum {
-		get{ return brickNum;}
-		set{ brickNum = value;}
+	public static void killBrick(){
+		// TODO
 	}
 
-	public int LifeNum{
-		get{ return lifeNum;}
-		set{ lifeNum = value;}
-	}
-
-	public void killBrick(){
-		brickNum -= 1;
-		if (brickNum == 0) {
-			Debug.Log("You win.");
-		}
-	}
-
-	public void loseLife() {
+	public static void loseLife() {
 		lifeNum -= 1;
+		// if no life remaining, show game over
 		if (lifeNum == 0) {
 			Debug.Log("You lose.");		
+			// Application.LoadLevel(0);
 		}
-		Application.LoadLevel(0);
+	}
+	
+	public static int Score {
+		get { return score; }
+	}
+	
+	public static void Reset () {
+		score = 0;
+		lifeNum = 3;
+		released = false;
 	}
 }
