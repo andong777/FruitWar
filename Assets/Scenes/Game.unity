@@ -201,6 +201,8 @@ MonoBehaviour:
   rightWall: {fileID: 231011070}
   topWall: {fileID: 297654668}
   bottomWall: {fileID: 2134282983}
+  bricks:
+  - {fileID: 100000, guid: b476ba5adab1bf14fa46d0986f3cca0e, type: 2}
 --- !u!114 &488197817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0367b734f7225e6408435f891073182c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myGUISkin: {fileID: 11400000, guid: ebfcbdcb499b42d42abbe784c30fcd11, type: 2}
+  topPos: 13
+  buttonWidth: 60
+  buttonHeight: 30
 --- !u!1 &731946813
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +315,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 862190179
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: 810fd8f3ea468b6439ca66e1776ca5da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -509,7 +515,7 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
+  m_SortingLayerID: 862190179
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300008, guid: 810fd8f3ea468b6439ca66e1776ca5da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

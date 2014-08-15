@@ -3,6 +3,9 @@ using System.Collections;
 
 public class GameInfo : MonoBehaviour {
 
+	public const int OriginalBrickNum = 20;
+	public const int targetScore = 15000;
+
 	private static bool released = false;
 
 	private static int lifeNum = 3;
@@ -14,7 +17,11 @@ public class GameInfo : MonoBehaviour {
 	}
 
 	public static void killBrick(){
-		// TODO
+		score += 1000;
+		if (score >= targetScore) {
+			Debug.Log("You win.");
+			Application.LoadLevel(0);
+		}
 	}
 
 	public static void loseLife() {
@@ -22,7 +29,7 @@ public class GameInfo : MonoBehaviour {
 		// if no life remaining, show game over
 		if (lifeNum == 0) {
 			Debug.Log("You lose.");		
-			// Application.LoadLevel(0);
+			Application.LoadLevel(0);
 		}
 	}
 	

@@ -30,9 +30,18 @@ public class MovePad : MonoBehaviour {
 		if(other.gameObject.tag == "Ball" && GameInfo.Released){
 			other.rigidbody.velocity = other.rigidbody.velocity / 2 + rigidbody2D.velocity / 3;			
 		}
-		// if it is the property, eat it with some delay
-		else if(other.gameObject.tag == "Property"){
-			Destroy (other.gameObject, 0.5f);
+		
+	}
+	
+	void OnTriggerEnter2D (Collider2D other) {
+		// if it is the property, eat it
+		if(other.gameObject.tag == "Property"){
+			Destroy (other.gameObject);
+		}
+		// if it is the brick, do KillBrick
+		else if(other.gameObject.tag == "Brick"){
+			Destroy(other.gameObject);
+			GameInfo.killBrick();
 		}
 	}
 }

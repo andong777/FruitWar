@@ -42,7 +42,11 @@ public class BallFly : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if (other.gameObject.tag == "Brick") {
-			Destroy (other.gameObject);
+			// Destroy (other.gameObject);
+			// GameInfo.killBrick();
+			other.rigidbody.isKinematic = false;	// let it fall
+			other.collider.isTrigger = true;	// let it be transparent
 		}
 	}
+	
 }

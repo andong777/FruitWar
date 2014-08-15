@@ -19,9 +19,13 @@ public class SetGame: MonoBehaviour {
 	private float topPos;
 	private float bottomPos;
 	
+	// the bricks
+	public GameObject[] bricks;
+	
 	void Awake () {
 		pad = GameObject.Find("Pad").transform;
 		ball = GameObject.Find("Ball").transform;
+		Random.seed = System.DateTime.Now.Millisecond;
 	}
 
 	// Use this for initialization
@@ -31,14 +35,17 @@ public class SetGame: MonoBehaviour {
 		rightPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x;
 		topPos = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0)).y;
 		bottomPos = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y;
+		
 		// set walls
 		leftWall.position = new Vector3(leftPos - leftWall.gameObject.collider2D.bounds.size.x / 2, 0, 0);
 		rightWall.position = new Vector3(rightPos + rightWall.gameObject.collider2D.bounds.size.x / 2, 0, 0);
 		topWall.position = new Vector3(0, topPos + topWall.gameObject.collider2D.bounds.size.y / 2, 0);
-		bottomWall.position = new Vector3(0, bottomPos - bottomWall.gameObject.collider2D.bounds.size.y / 2, 0);
-		
+		bottomWall.position = new Vector3(0, bottomPos - bottomWall.gameObject.collider2D.bounds.size.y / 2, 0);		
+	
 		// set the pad and the ball
 		SetPadAndBall();
+		// spawn bricks randomly.
+		SpawnBricks();
 	}
 	
 	void SetPadAndBall() {
@@ -48,6 +55,15 @@ public class SetGame: MonoBehaviour {
 		ball.position = pad.position + new Vector3(0, ball.gameObject.collider2D.bounds.size.y / 2, 0);
 		// mark the ball as unreleased
 		GameInfo.Released = false;
+	}
+	
+	void SpawnBricks () {
+		for(int i=0;i<GameInfo.OriginalBrickNum;i++){
+			float x = Random.Range(leftPos, rightPos);
+			float y = Random.Range(bottomPos + 2, topPos);
+			int index = Random.Range(0, bricks.Length - 1);
+			Instantiate(bricks[index], new Vector3(x, y, 0), Quaternion.identity);
+		}
 	}
 
 }
