@@ -7,9 +7,9 @@ public class Enlarge : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Pad"){
-			Vector3 scale = transform.localScale;
+			Vector3 scale = other.transform.localScale;
 			scale.x = ratio * scale.x;
-			transform.localScale = scale;
+			other.transform.localScale = scale;
 		}
 	}
 }

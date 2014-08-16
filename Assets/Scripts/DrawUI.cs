@@ -28,7 +28,6 @@ public class DrawUI : MonoBehaviour {
 			GameObject.Find("GameManager").SendMessage("SetPadAndBall");
 			GameObject.Find("GameManager").SendMessage("SpawnBricks");
 			GameInfo.Reset();
-			Application.LoadLevel(1);
 		}
 		
 		// draw exit button

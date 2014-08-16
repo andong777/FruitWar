@@ -34,14 +34,14 @@ public class MovePad : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D (Collider2D other) {
-		// if it is the property, eat it
+		// if it is a property, eat it
 		if(other.gameObject.tag == "Property"){
 			Destroy (other.gameObject);
 		}
-		// if it is the brick, do KillBrick
+		// if it is a brick, do KillBrick
 		else if(other.gameObject.tag == "Brick"){
 			Destroy(other.gameObject);
-			GameInfo.killBrick();
+			GameInfo.KillBrick();
 		}
 	}
 }

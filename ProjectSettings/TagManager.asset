@@ -5,6 +5,8 @@ TagManager:
   tags:
   - Ball
   - Brick
+  - Property
+  - Pad
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -39,6 +41,10 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
+  - name: Background
+    userID: 3
+    uniqueID: 2115556747
+    locked: 0
   - name: Default
     userID: 0
     uniqueID: 0
@@ -46,4 +52,8 @@ TagManager:
   - name: Player
     userID: 1
     uniqueID: 862190179
+    locked: 0
+  - name: UI
+    userID: 4
+    uniqueID: 3086333315
     locked: 0

@@ -19,7 +19,7 @@ public class ShootBall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Control the ball.
-		if (Input.GetButtonDown ("Fire1") && !GameInfo.Released) {
+		if (Input.GetButtonUp ("Fire1") && !GameInfo.Released) {
 			Debug.Log("Fire");
 			// choose a random direction.			
 			float dirX = Random.value;

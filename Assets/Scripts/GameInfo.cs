@@ -16,21 +16,33 @@ public class GameInfo : MonoBehaviour {
 		set{ released = value;}
 	}
 
-	public static void killBrick(){
+	public static void KillBrick(){
 		score += 1000;
 		if (score >= targetScore) {
 			Debug.Log("You win.");
 			Application.LoadLevel(0);
 		}
 	}
+	
+	public static void AddScoreByBrick(int brickNum) {
+		score += brickNum * 1000;
+		if (score >= targetScore) {
+			Debug.Log("You win.");
+			Application.LoadLevel(0);
+		}
+	}
 
-	public static void loseLife() {
+	public static void LoseLife() {
 		lifeNum -= 1;
 		// if no life remaining, show game over
 		if (lifeNum == 0) {
 			Debug.Log("You lose.");		
 			Application.LoadLevel(0);
 		}
+	}
+	
+	public static void GainLife() {
+		lifeNum += 1;
 	}
 	
 	public static int Score {
@@ -42,7 +54,7 @@ public class GameInfo : MonoBehaviour {
 	}
 	
 	public static void SetTargetScoreByBrickNum (int brickNum) {
-		targetScore = brickNum / 2 * 1000; 
+		targetScore = brickNum * 2 / 3 * 1000; 
 	}
 	
 	public static void Reset () {

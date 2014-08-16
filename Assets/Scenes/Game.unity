@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 231011070}
   - 61: {fileID: 231011071}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RightWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 297654668}
   - 61: {fileID: 297654669}
-  m_Layer: 0
+  - 114: {fileID: 297654670}
+  m_Layer: 5
   m_Name: TopWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,6 +153,17 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
+--- !u!114 &297654670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 297654667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc6b223790627345a288801f0559912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &488197814
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,9 +175,9 @@ GameObject:
   - 114: {fileID: 488197816}
   - 114: {fileID: 488197817}
   - 114: {fileID: 488197818}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,8 +251,9 @@ GameObject:
   - 4: {fileID: 731946814}
   - 212: {fileID: 731946818}
   - 50: {fileID: 731946815}
-  - 114: {fileID: 731946817}
   - 58: {fileID: 731946816}
+  - 114: {fileID: 731946817}
+  - 114: {fileID: 731946819}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -319,6 +332,20 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300006, guid: 810fd8f3ea468b6439ca66e1776ca5da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &731946819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 731946813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241382c12961152468a7514fb4f1b1e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propertyProbability: .200000003
+  properties:
+  - {fileID: 100000, guid: 96102bad9fbb0574eb5ef2c6c56c55f1, type: 2}
 --- !u!1 &929038781
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +355,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 929038783}
   - 61: {fileID: 929038782}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +484,7 @@ GameObject:
   - 114: {fileID: 1691259623}
   m_Layer: 0
   m_Name: Pad
-  m_TagString: Player
+  m_TagString: Pad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -555,7 +582,7 @@ GameObject:
   - 4: {fileID: 2134282983}
   - 61: {fileID: 2134282984}
   - 114: {fileID: 2134282985}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BottomWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
