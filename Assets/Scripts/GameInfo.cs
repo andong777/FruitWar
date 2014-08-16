@@ -4,7 +4,7 @@ using System.Collections;
 public class GameInfo : MonoBehaviour {
 
 	public const int OriginalBrickNum = 20;
-	public const int targetScore = 15000;
+	private static int targetScore;
 
 	private static bool released = false;
 
@@ -35,6 +35,14 @@ public class GameInfo : MonoBehaviour {
 	
 	public static int Score {
 		get { return score; }
+	}
+	
+	public static int TargetScore {
+		get { return targetScore; }
+	}
+	
+	public static void SetTargetScoreByBrickNum (int brickNum) {
+		targetScore = brickNum / 2 * 1000; 
 	}
 	
 	public static void Reset () {

@@ -58,12 +58,35 @@ public class SetGame: MonoBehaviour {
 	}
 	
 	void SpawnBricks () {
+		// get brick info. add a little distance between them
+		float brickWidth = bricks[0].renderer.bounds.size.x * 1.1f;
+		float brickHeight = bricks[0].renderer.bounds.size.y * 1.1f;
+	
+		// set block to spawn bricks
+		float distX = (rightPos - leftPos) / 8;
+		float distY = (topPos - bottomPos) / 3;
+		float width = distX * 6;
+		float height = distY * 2;
+	
+		// array to mark if a place is occupied
+		int rowNum = (int)(width / brickWidth);
+		int colNum = (int)(height / brickHeight);
+		bool[,] used = new bool[rowNum, colNum];
+				
+		int brickCount = 0;	// count how many bricks are generated
 		for(int i=0;i<GameInfo.OriginalBrickNum;i++){
-			float x = Random.Range(leftPos, rightPos);
-			float y = Random.Range(bottomPos + 2, topPos);
-			int index = Random.Range(0, bricks.Length - 1);
-			Instantiate(bricks[index], new Vector3(x, y, 0), Quaternion.identity);
+			int row = Random.Range(0, rowNum - 1);
+			int col = Random.Range(0, colNum - 1);
+			if(!used[row, col]){
+				used[row, col] = true;
+				brickCount ++;
+				int index = Random.Range(0, bricks.Length - 1);
+				float x = leftPos + distX + brickWidth * row;
+				float y = bottomPos + distY + brickHeight * col;
+				Instantiate(bricks[index], new Vector3(x, y, 0), Quaternion.identity);				
+			}
 		}
+		GameInfo.SetTargetScoreByBrickNum(brickCount) ;	// set target score according to bricks
 	}
 
 }
