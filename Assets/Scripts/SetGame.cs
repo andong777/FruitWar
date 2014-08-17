@@ -22,6 +22,12 @@ public class SetGame: MonoBehaviour {
 	// the bricks
 	public GameObject[] bricks;
 	
+	// used to convert ball in fireball mode
+	public GameObject leftConverter;
+	public GameObject rightConverter;
+	public GameObject topConverter;
+	public GameObject bottomConverter;
+	
 	void Awake () {
 		pad = GameObject.Find("Pad").transform;
 		ball = GameObject.Find("Ball").transform;
@@ -50,7 +56,16 @@ public class SetGame: MonoBehaviour {
 	
 	void SetPadAndBall() {
 		// set pad position
-		pad.position = new Vector3(0, bottomPos + 1, 0);
+		pad.position = new Vector3(0, bottomPos + pad.collider2D.bounds.size.y, 0);
+		// set ball to collider
+		ball.gameObject.SendMessage("LoseFireBall");
+		// let converters not take effect
+		leftConverter.SendMessage ("LoseEffect");
+		rightConverter.SendMessage ("LoseEffect");
+		topConverter.SendMessage ("LoseEffect");
+		bottomConverter.SendMessage ("LoseEffect");
+		// zero ball speed
+		ball.gameObject.rigidbody2D.velocity = Vector3.zero;
 		// set ball position
 		ball.position = pad.position + new Vector3(0, ball.gameObject.collider2D.bounds.size.y / 2, 0);
 		// mark the ball as unreleased
@@ -64,9 +79,9 @@ public class SetGame: MonoBehaviour {
 	
 		// set block to spawn bricks
 		float distX = (rightPos - leftPos) / 8;
-		float distY = (topPos - bottomPos) / 3;
+		float distY = (topPos - bottomPos) / 4;
 		float width = distX * 6;
-		float height = distY * 2;
+		float height = distY * 3;
 	
 		// array to mark if a place is occupied
 		int rowNum = (int)(width / brickWidth);
@@ -81,12 +96,26 @@ public class SetGame: MonoBehaviour {
 				used[row, col] = true;
 				brickCount ++;
 				int index = Random.Range(0, bricks.Length - 1);
-				float x = leftPos + distX + brickWidth * row;
-				float y = bottomPos + distY + brickHeight * col;
-				Instantiate(bricks[index], new Vector3(x, y, 0), Quaternion.identity);				
+				float x = leftPos + distX + brickWidth * (row + 0.5f);
+				float y = bottomPos + distY + brickHeight * (col + 0.5f);
+				Instantiate(bricks[index], new Vector3(x, y, 0), Quaternion.identity);
 			}
 		}
 		GameInfo.SetTargetScoreByBrick(brickCount);	// set target score according to bricks
+		
+		// set the ball converter to its position
+		Vector3 vector = Vector3.zero;
+		vector.y = (ball.position.y + ball.collider2D.bounds.size.y + bottomPos + distY) / 2;
+		bottomConverter.transform.position = vector;
+		vector.y = topPos - distY / 2;
+		topConverter.transform.position = vector;
+		
+		vector.y = 0;
+		vector.x = leftPos + distX / 2;
+		leftConverter.transform.position = vector;
+		vector.x = rightPos - distX / 2;
+		rightConverter.transform.position = vector;
+		
 	}
 
 }

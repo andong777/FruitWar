@@ -3,6 +3,11 @@
 
 A 2D brick game using Unity for self study.
 
+** 8/18 P.M.
+- Implementing fireball functionality.
+- Modify ball speed control.
+- Fix bug that check lose when not.
+
 ** 8/17 A.M.
 - Implement gun property and fire gun functionality.
 - Add no-bricks lose condition.

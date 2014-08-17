@@ -10,7 +10,7 @@ public class GameInfo : MonoBehaviour {
 	private static int lifeNum = 3;
 	private static int score = 0;
 	
-	private static int brickNum = 20;
+	private static int brickNum = 40;
 
 	public static bool Released { 
 		get{ return released;}

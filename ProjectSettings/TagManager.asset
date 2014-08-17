@@ -7,6 +7,9 @@ TagManager:
   - Brick
   - Property
   - Pad
+  - Bullet
+  - Wall
+  - Converter
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

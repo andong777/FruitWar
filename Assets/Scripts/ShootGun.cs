@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireGun : MonoBehaviour {
+public class ShootGun : MonoBehaviour {
 	
 	int bulletNum = 0;	// set no bullet at the beginning
 	float speed = 10f;
@@ -25,6 +25,7 @@ public class FireGun : MonoBehaviour {
 	}
 	
 	void LoadBullets () {
+		// by design, bullets can be overlaid
 		bulletNum += 5;
 	}
 }

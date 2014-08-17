@@ -3,13 +3,16 @@ using System.Collections;
 
 public class DetectFall : MonoBehaviour {
 	
+	public bool bottom;
+	
 	void OnTriggerEnter2D (Collider2D other) {
 		
 		// if it is the ball
-		if (other.gameObject.tag == "Ball") {
+		if (bottom && other.gameObject.tag == "Ball") {
 			GameInfo.LoseLife();	// subtract one life of the player
-			GameObject.Find ("GameManager").SendMessage("SetPadAndBall");	// reset position
-			other.gameObject.SendMessage("SetVariables");	// return speed to normal
+			other.gameObject.SendMessage("SetVariables");	// recover normal thresholds and values
+			GameObject.Find ("GameManager").SendMessage("SetPadAndBall");	// reset position, zero speed
+			
 		}
 		// remove other objects to save memory
 		else {

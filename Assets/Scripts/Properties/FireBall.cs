@@ -3,11 +3,26 @@ using System.Collections;
 
 public class FireBall : MonoBehaviour {
 
+	private float time = 4f;
+
+	private GameObject ball;
+	private GameObject[] converters;
+
+	void Awake () {
+		ball = GameObject.Find("Ball");
+		converters = GameObject.FindGameObjectsWithTag("Converter");
+	}
+
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Pad"){
-			// TODO
-			// plan to set all bricks to trigger and later on return them to collider
 			Debug.Log("get fireball");
+			// set ball to trigger		
+			ball.SendMessage("MakeFireBall", time);
+			// let converters work
+			foreach(var c in converters){
+				c.SendMessage("TakeEffect", time);
+			}
 		}
 	}
+
 }
