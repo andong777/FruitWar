@@ -7,6 +7,8 @@ public class Gun : MonoBehaviour {
 		if (other.gameObject.tag == "Pad"){
 			// TODO
 			// need bullet prefab which is trigger and add "DetectFall" to top wall
+			Debug.Log("get gun");
+			other.gameObject.SendMessage("LoadBullets");
 		}
 	}
 }

@@ -7,6 +7,7 @@ public class SpeedUp : MonoBehaviour {
 	
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Pad"){
+			Debug.Log("get speed up");
 			GameObject.Find("Ball").SendMessage("SetSpeedByRatio", ratio);
 		}
 	}

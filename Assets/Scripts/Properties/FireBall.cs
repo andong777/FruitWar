@@ -7,6 +7,7 @@ public class FireBall : MonoBehaviour {
 		if (other.gameObject.tag == "Pad"){
 			// TODO
 			// plan to set all bricks to trigger and later on return them to collider
+			Debug.Log("get fireball");
 		}
 	}
 }

@@ -74,7 +74,7 @@ public class SetGame: MonoBehaviour {
 		bool[,] used = new bool[rowNum, colNum];
 				
 		int brickCount = 0;	// count how many bricks are generated
-		for(int i=0;i<GameInfo.OriginalBrickNum;i++){
+		for(int i=0;i<GameInfo.GetBrickNum();i++){
 			int row = Random.Range(0, rowNum - 1);
 			int col = Random.Range(0, colNum - 1);
 			if(!used[row, col]){
@@ -86,7 +86,7 @@ public class SetGame: MonoBehaviour {
 				Instantiate(bricks[index], new Vector3(x, y, 0), Quaternion.identity);				
 			}
 		}
-		GameInfo.SetTargetScoreByBrickNum(brickCount) ;	// set target score according to bricks
+		GameInfo.SetTargetScoreByBrick(brickCount);	// set target score according to bricks
 	}
 
 }

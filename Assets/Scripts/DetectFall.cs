@@ -13,6 +13,10 @@ public class DetectFall : MonoBehaviour {
 		}
 		// remove other objects to save memory
 		else {
+			Debug.Log("catch something");
+			if(other.gameObject.tag == "Brick"){
+				GameInfo.LoseBrick();	// to help game manager count brick number
+			}
 			Destroy(other.gameObject);
 		}
 	}

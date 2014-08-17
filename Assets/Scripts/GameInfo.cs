@@ -3,13 +3,14 @@ using System.Collections;
 
 public class GameInfo : MonoBehaviour {
 
-	public const int OriginalBrickNum = 20;
 	private static int targetScore;
 
 	private static bool released = false;
 
 	private static int lifeNum = 3;
 	private static int score = 0;
+	
+	private static int brickNum = 20;
 
 	public static bool Released { 
 		get{ return released;}
@@ -17,18 +18,21 @@ public class GameInfo : MonoBehaviour {
 	}
 
 	public static void KillBrick(){
-		score += 1000;
-		if (score >= targetScore) {
-			Debug.Log("You win.");
-			Application.LoadLevel(0);
-		}
+		// the order is important: check score first, then check brick num
+		do{
+			score += 1000;
+			if (score >= targetScore) {
+				Win ();
+				break;
+			}
+			LoseBrick();		
+		}while(false);
 	}
 	
 	public static void AddScoreByBrick(int brickNum) {
 		score += brickNum * 1000;
 		if (score >= targetScore) {
-			Debug.Log("You win.");
-			Application.LoadLevel(0);
+			Win ();
 		}
 	}
 
@@ -36,8 +40,7 @@ public class GameInfo : MonoBehaviour {
 		lifeNum -= 1;
 		// if no life remaining, show game over
 		if (lifeNum == 0) {
-			Debug.Log("You lose.");		
-			Application.LoadLevel(0);
+			Lose ();
 		}
 	}
 	
@@ -45,16 +48,40 @@ public class GameInfo : MonoBehaviour {
 		lifeNum += 1;
 	}
 	
-	public static int Score {
-		get { return score; }
+	public static int GetScore() {
+		return score;
 	}
 	
-	public static int TargetScore {
-		get { return targetScore; }
+	public static int GetTargetScore() {
+		return targetScore;
 	}
 	
-	public static void SetTargetScoreByBrickNum (int brickNum) {
+	public static int GetBrickNum() {
+		return brickNum;
+	}
+	
+	public static void LoseBrick() {
+		brickNum --;
+		// detect if no bricks left
+		if(brickNum == 0){
+			Debug.Log ("No bricks");
+			Lose ();
+		}			
+	}
+	
+	public static void SetTargetScoreByBrick(int value) {
+		brickNum = value;
 		targetScore = brickNum * 2 / 3 * 1000; 
+	}
+	
+	private static void Win() {
+		Debug.Log("You win.");
+		Application.LoadLevel(0);
+	}
+	
+	private static void Lose() {
+		Debug.Log("You lose.");
+		Application.LoadLevel(0);
 	}
 	
 	public static void Reset () {
