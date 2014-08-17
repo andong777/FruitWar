@@ -3,19 +3,19 @@
 
 A 2D brick game using Unity for self study.
 
-** 8/18 P.M.
+## 8/18 P.M.
 - Implementing fireball functionality.
 - Modify ball speed control.
 - Fix bug that check lose when not.
 
-** 8/17 A.M.
+## 8/17 A.M.
 - Implement gun property and fire gun functionality.
 - Add no-bricks lose condition.
 
-** 8/16 P.M.
+## 8/16 P.M.
 - Implement several properties.
 
-** 8/16 A.M.
+## 8/16 A.M.
 - Improve brick generating method.
 - Make target score change as brick number change.
 - Add target score display.
