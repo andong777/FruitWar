@@ -22,11 +22,6 @@ public class SetGame: MonoBehaviour {
 	// the bricks
 	public GameObject[] bricks;
 	
-	// used to convert ball in fireball mode
-	public GameObject leftConverter;
-	public GameObject rightConverter;
-	public GameObject topConverter;
-	public GameObject bottomConverter;
 	
 	void Awake () {
 		pad = GameObject.Find("Pad").transform;
@@ -57,14 +52,9 @@ public class SetGame: MonoBehaviour {
 	void SetPadAndBall() {
 		// set pad position
 		pad.position = new Vector3(0, bottomPos + pad.collider2D.bounds.size.y, 0);
-		// set ball to collider
-		// ball.gameObject.SendMessage("LoseFireBall");
-		ball.collider2D.isTrigger = true;
-		// let converters not take effect
-		leftConverter.SendMessage ("LoseEffect");
-		rightConverter.SendMessage ("LoseEffect");
-		topConverter.SendMessage ("LoseEffect");
-		bottomConverter.SendMessage ("LoseEffect");
+		// return ball to normal
+		ball.gameObject.SendMessage("LoseFireBall");
+
 		// zero ball speed
 		ball.gameObject.rigidbody2D.velocity = Vector3.zero;
 		// set ball position
@@ -103,19 +93,6 @@ public class SetGame: MonoBehaviour {
 			}
 		}
 		GameInfo.SetTargetScoreByBrick(brickCount);	// set target score according to bricks
-		
-		// set the ball converter to its position
-		Vector3 vector = Vector3.zero;
-		vector.y = (ball.position.y + ball.collider2D.bounds.size.y + bottomPos + distY) / 2;
-		bottomConverter.transform.position = vector;
-		vector.y = topPos - distY / 2;
-		topConverter.transform.position = vector;
-		
-		vector.y = 0;
-		vector.x = leftPos + distX / 2;
-		leftConverter.transform.position = vector;
-		vector.x = rightPos - distX / 2;
-		rightConverter.transform.position = vector;
 		
 	}
 

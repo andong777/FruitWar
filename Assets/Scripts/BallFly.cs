@@ -17,6 +17,12 @@ public class BallFly : MonoBehaviour {
 	// speed will return to normal after resetTime
 	private const float resetTime = 3f;
 	
+	// the probability of generating property
+	float propertyProbability = 0.2f;
+	
+	// properties
+	public GameObject[] properties;
+	
 	void Start () {
 		SetVariables ();
 		Random.seed = System.DateTime.Now.Millisecond;
@@ -38,9 +44,10 @@ public class BallFly : MonoBehaviour {
 		}
 	}
 	
-	// this method is to avoid the situations below:
-	// 1. where ball flies too slow or too fast after collision
-	// 2. where ball flies horizontally
+	/* 	This method is to avoid the situations below:
+	 * 	1. where ball flies too slow or too fast after collision
+	 * 	2. where ball flies horizontally
+	 */
 	void FixedUpdate () {
 		if (GameInfo.Released) {
 			Vector3 velocity = rigidbody2D.velocity;
@@ -67,19 +74,39 @@ public class BallFly : MonoBehaviour {
 		}
 	}
 	
+	// for normal ball
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if (other.gameObject.tag == "Brick") {
+			// drop brick
 			other.rigidbody.isKinematic = false;	// let it fall
 			other.collider.isTrigger = true;	// let it be transparent
+			other.gameObject.tag = "FallBrick";	// to avoid a second contact
+			// drop property
+			float probable = Random.Range(0f, 1f);
+			if(probable < propertyProbability){
+				Debug.Log("ball drops a property");
+				int index = Random.Range(0, properties.Length - 1);	// choose a property
+				Instantiate(properties[index], transform.position, Quaternion.identity);
+			}
 		}
 	}
 	
+	// for fireball
 	void OnTriggerEnter2D(Collider2D other){
 		// Debug.Log("fireball working");
 		if (other.gameObject.tag == "Brick") {
+			// drop brick
 			other.rigidbody2D.isKinematic = false;	// let it fall
 			other.collider2D.isTrigger = true;	// let it be transparent
+			other.gameObject.tag = "FallBrick";	// to avoid a second contact
+			// drop property
+			float probable = Random.Range(0f, 1f);
+			if(probable < propertyProbability){
+				Debug.Log("fireball drops a property");
+				int index = Random.Range(0, properties.Length - 1);	// choose a property
+				Instantiate(properties[index], transform.position, Quaternion.identity);
+			}
 		}
 	}
 	
@@ -113,21 +140,15 @@ public class BallFly : MonoBehaviour {
 	}
 	
 	void MakeFireBall (float time){
-		// find absolute value of border, choose right and top because they are positive
-		float absX = GameObject.Find ("RightConverter").transform.position.x;
-		float absY = GameObject.Find ("TopConverter").transform.position.y;
-		float ballX = transform.position.x + collider2D.bounds.size.x;
-		float ballY = transform.position.y + collider2D.bounds.size.y;
-		// if ball inside converters, change it to trigger, else do nothing
-		if(Mathf.Abs(ballX) < absX && Mathf.Abs (ballY) < absY){	
-			Debug.Log("Inside converters, to trigger");
-			collider2D.isTrigger = true;
-			Invoke ("LoseFireBall", time);
-		}
+	
+		collider2D.isTrigger = true;
+		ConvertBall.work = true;
+		Invoke ("LoseFireBall", time);
 	}
 	
 	void LoseFireBall (){
 		collider2D.isTrigger = false;
+		ConvertBall.work = false;
 	}
 	
 }

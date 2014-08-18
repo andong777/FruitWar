@@ -8,10 +8,13 @@ public class DetectFall : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		
 		// if it is the ball
-		if (bottom && other.gameObject.tag == "Ball") {
-			GameInfo.LoseLife();	// subtract one life of the player
-			other.gameObject.SendMessage("SetVariables");	// recover normal thresholds and values
-			GameObject.Find ("GameManager").SendMessage("SetPadAndBall");	// reset position, zero speed*
+		if (other.gameObject.tag == "Ball") {
+			// if it is bottom wall, execute code, else let ConvertBall takes effect
+			if (bottom) {
+				GameInfo.LoseLife();	// subtract one life of the player
+				other.gameObject.SendMessage("SetVariables");	// recover normal thresholds and values
+				GameObject.Find ("GameManager").SendMessage("SetPadAndBall");	// reset position, zero speed*
+			}			
 		}
 		// remove other objects to save memory
 		else {

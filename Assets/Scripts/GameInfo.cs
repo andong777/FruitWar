@@ -4,14 +4,12 @@ using System.Collections;
 public class GameInfo : MonoBehaviour {
 
 	private static int targetScore;
-
 	private static bool released = false;
-
 	private static int lifeNum = 3;
 	private static int score = 0;
-	
 	private static int brickNum = 40;
-
+	
+	
 	public static bool Released { 
 		get{ return released;}
 		set{ released = value;}
@@ -89,4 +87,5 @@ public class GameInfo : MonoBehaviour {
 		lifeNum = 3;
 		released = false;
 	}
+	
 }

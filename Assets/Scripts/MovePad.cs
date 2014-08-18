@@ -40,7 +40,7 @@ public class MovePad : MonoBehaviour {
 			Destroy (other.gameObject, 0.5f);
 		}
 		// if it is a brick, do KillBrick
-		else if(other.gameObject.tag == "Brick"){
+		else if(other.gameObject.tag == "FallBrick"){
 			Destroy(other.gameObject);
 			GameInfo.KillBrick();
 		}
