@@ -36,7 +36,8 @@ public class MovePad : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		// if it is a property, eat it
 		if(other.gameObject.tag == "Property"){
-			Destroy (other.gameObject);
+			Debug.Log("pad gets a property");
+			Destroy (other.gameObject, 0.5f);
 		}
 		// if it is a brick, do KillBrick
 		else if(other.gameObject.tag == "Brick"){

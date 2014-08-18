@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BallFly : MonoBehaviour {
 	
-	private const float normalSpeed = 3f;
+	private const float normalSpeed = 6f;
 	
 	// if speed smaller or greater than speed threshold, set the speed to value
 	private float speedMinThreshold;
@@ -113,8 +113,17 @@ public class BallFly : MonoBehaviour {
 	}
 	
 	void MakeFireBall (float time){
-		collider2D.isTrigger = true;
-		Invoke ("LoseFireBall", time);
+		// find absolute value of border, choose right and top because they are positive
+		float absX = GameObject.Find ("RightConverter").transform.position.x;
+		float absY = GameObject.Find ("TopConverter").transform.position.y;
+		float ballX = transform.position.x + collider2D.bounds.size.x;
+		float ballY = transform.position.y + collider2D.bounds.size.y;
+		// if ball inside converters, change it to trigger, else do nothing
+		if(Mathf.Abs(ballX) < absX && Mathf.Abs (ballY) < absY){	
+			Debug.Log("Inside converters, to trigger");
+			collider2D.isTrigger = true;
+			Invoke ("LoseFireBall", time);
+		}
 	}
 	
 	void LoseFireBall (){

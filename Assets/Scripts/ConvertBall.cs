@@ -5,10 +5,10 @@ public class ConvertBall : MonoBehaviour {
 	
 	public bool isHorizontal;
 	
-	private bool takeEffect = false;
+	public bool takeEffect = false;
 	
 	void OnTriggerEnter2D (Collider2D other) {
-	
+		
 		if(takeEffect && other.gameObject.tag == "Ball"){
 			
 			// top or bottom converter, check y value
@@ -16,6 +16,7 @@ public class ConvertBall : MonoBehaviour {
 				float absBallY = Mathf.Abs (other.transform.position.y);
 				float absThisY = Mathf.Abs (transform.position.y);
 				
+				Debug.Log("ball y: "+absBallY+" This y: "+absThisY);
 				// if ball inside, going out
 				if(absBallY < absThisY){
 					Debug.Log("ball going out, change it to collider");
@@ -32,6 +33,7 @@ public class ConvertBall : MonoBehaviour {
 				float absBallX = Mathf.Abs (other.transform.position.x);
 				float absThisX = Mathf.Abs (transform.position.x);
 				
+				Debug.Log("ball x: "+absBallX+" This x: "+absThisX);
 				// if ball inside, going out
 				if(absBallX < absThisX){
 					Debug.Log("ball going out, change it to collider");

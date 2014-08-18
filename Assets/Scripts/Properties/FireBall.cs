@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FireBall : MonoBehaviour {
 
-	private float time = 4f;
+	private float time = 40f;
 
 	private GameObject ball;
 	private GameObject[] converters;

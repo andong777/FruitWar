@@ -4,8 +4,7 @@ using System.Collections;
 public class DropProperty : MonoBehaviour {
 
 	// the probability of generating property
-	[RangeAttribute(0, 1)]
-	public float propertyProbability = 0.2f;
+	float propertyProbability = 0.2f;
 
 	// properties
 	public GameObject[] properties;
@@ -18,6 +17,7 @@ public class DropProperty : MonoBehaviour {
 		if (other.gameObject.tag == "Brick"){
 			float probable = Random.Range(0f, 1f);
 			if(probable < propertyProbability){
+				Debug.Log("drop a property");
 				int index = Random.Range(0, properties.Length - 1);	// choose a property
 				Instantiate(properties[index], transform.position, Quaternion.identity);
 			}

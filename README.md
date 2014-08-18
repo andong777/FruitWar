@@ -3,7 +3,10 @@
 
 A 2D brick game using Unity for self study.
 
-## 8/18 P.M.
+## 8/18 A.M.
+- Finished fireball.
+
+## 8/17 P.M.
 - Implementing fireball functionality.
 - Modify ball speed control.
 - Fix bug that check lose when not.
