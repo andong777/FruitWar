@@ -4,7 +4,7 @@ using System.Collections;
 public class DropProperty : MonoBehaviour {
 
 	// the probability of generating property
-	float propertyProbability = 0.2f;
+	float propertyProbability = 0f;
 
 	// properties
 	public GameObject[] properties;

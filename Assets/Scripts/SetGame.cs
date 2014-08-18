@@ -58,7 +58,8 @@ public class SetGame: MonoBehaviour {
 		// set pad position
 		pad.position = new Vector3(0, bottomPos + pad.collider2D.bounds.size.y, 0);
 		// set ball to collider
-		ball.gameObject.SendMessage("LoseFireBall");
+		// ball.gameObject.SendMessage("LoseFireBall");
+		ball.collider2D.isTrigger = true;
 		// let converters not take effect
 		leftConverter.SendMessage ("LoseEffect");
 		rightConverter.SendMessage ("LoseEffect");

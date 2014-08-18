@@ -11,8 +11,7 @@ public class DetectFall : MonoBehaviour {
 		if (bottom && other.gameObject.tag == "Ball") {
 			GameInfo.LoseLife();	// subtract one life of the player
 			other.gameObject.SendMessage("SetVariables");	// recover normal thresholds and values
-			GameObject.Find ("GameManager").SendMessage("SetPadAndBall");	// reset position, zero speed
-			
+			GameObject.Find ("GameManager").SendMessage("SetPadAndBall");	// reset position, zero speed*
 		}
 		// remove other objects to save memory
 		else {
