@@ -9,7 +9,6 @@ public class GameInfo : MonoBehaviour {
 	private static int score = 0;
 	private static int brickNum = 40;
 	
-	
 	public static bool Released { 
 		get{ return released;}
 		set{ released = value;}
@@ -54,10 +53,6 @@ public class GameInfo : MonoBehaviour {
 		return targetScore;
 	}
 	
-	public static int GetBrickNum() {
-		return brickNum;
-	}
-	
 	public static void LoseBrick() {
 		brickNum --;
 		// detect if no bricks left
@@ -69,7 +64,7 @@ public class GameInfo : MonoBehaviour {
 	
 	public static void SetTargetScoreByBrick(int value) {
 		brickNum = value;
-		targetScore = brickNum * 2 / 3 * 1000; 
+		targetScore = brickNum * 2 / 3 * 1000;
 	}
 	
 	private static void Win() {

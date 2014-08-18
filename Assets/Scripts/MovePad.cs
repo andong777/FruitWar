@@ -45,4 +45,14 @@ public class MovePad : MonoBehaviour {
 			GameInfo.KillBrick();
 		}
 	}
+	
+	void MakeRope (float time) {
+		GetComponent<DistanceJoint2D>().enabled = true;
+		Invoke ("LoseRope", time);
+	}
+	
+	void LoseRope () {
+		GetComponent<DistanceJoint2D>().enabled = true;
+		Debug.Log("lose rope");
+	}
 }

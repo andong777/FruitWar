@@ -3,6 +3,11 @@
 
 A 2D brick game using Unity for self study.
 
+## 8/18 P.M.
+- Rebuild fireball.
+- Implement rope.
+- Add very naive textures.
+
 ## 8/18 A.M.
 - Finished fireball.
 

@@ -21,7 +21,7 @@ public class SetGame: MonoBehaviour {
 	
 	// the bricks
 	public GameObject[] bricks;
-	
+	float percentage = 0.75f;	// use how many spaces to generate bricks	
 	
 	void Awake () {
 		pad = GameObject.Find("Pad").transform;
@@ -52,6 +52,9 @@ public class SetGame: MonoBehaviour {
 	void SetPadAndBall() {
 		// set pad position
 		pad.position = new Vector3(0, bottomPos + pad.collider2D.bounds.size.y, 0);
+		// disable rope
+		pad.gameObject.SendMessage("LoseRope");
+		
 		// return ball to normal
 		ball.gameObject.SendMessage("LoseFireBall");
 
@@ -59,6 +62,7 @@ public class SetGame: MonoBehaviour {
 		ball.gameObject.rigidbody2D.velocity = Vector3.zero;
 		// set ball position
 		ball.position = pad.position + new Vector3(0, ball.gameObject.collider2D.bounds.size.y / 2, 0);
+		
 		// mark the ball as unreleased
 		GameInfo.Released = false;
 	}
@@ -78,9 +82,9 @@ public class SetGame: MonoBehaviour {
 		int rowNum = (int)(width / brickWidth);
 		int colNum = (int)(height / brickHeight);
 		bool[,] used = new bool[rowNum, colNum];
-				
+		
 		int brickCount = 0;	// count how many bricks are generated
-		for(int i=0;i<GameInfo.GetBrickNum();i++){
+		for(int i = 0; i < rowNum * colNum * percentage; i++){
 			int row = Random.Range(0, rowNum - 1);
 			int col = Random.Range(0, colNum - 1);
 			if(!used[row, col]){
@@ -92,6 +96,7 @@ public class SetGame: MonoBehaviour {
 				Instantiate(bricks[index], new Vector3(x, y, 0), Quaternion.identity);
 			}
 		}
+		
 		GameInfo.SetTargetScoreByBrick(brickCount);	// set target score according to bricks
 		
 	}
