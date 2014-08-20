@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: fe9457ddf6ee04c4f89b1a53806307d2
+guid: 3281a6867d4070e468bf2684a2dd3e93
 TextureImporter:
   fileIDToRecycleName:
-    21300000: bullet
+    21300000: potion
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +38,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []

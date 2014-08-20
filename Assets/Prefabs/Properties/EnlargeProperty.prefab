@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
+  - 95: {fileID: 9500000}
   m_Layer: 0
   m_Name: EnlargeProperty
   m_TagString: Property
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,7 +41,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: .5
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -55,8 +56,22 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .400000006, y: .600000024}
-  m_Center: {x: 0, y: 0}
+  m_Size: {x: 2.71207857, y: .620551705}
+  m_Center: {x: .00513792038, y: -.0102758408}
+--- !u!95 &9500000
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 614bc293bdfbbf54fb72d0bd99d258e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -88,7 +103,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 2703813f2ab41de41805538534a988e2, type: 3}
+  m_Sprite: {fileID: 21300094, guid: b7dae64286b78a74687167c4efb88708, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

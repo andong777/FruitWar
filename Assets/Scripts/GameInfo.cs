@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameInfo : MonoBehaviour {
 
@@ -17,7 +18,7 @@ public class GameInfo : MonoBehaviour {
 	public static void KillBrick(){
 		// the order is important: check score first, then check brick num
 		do{
-			score += 1000;
+            AddScoreByBrick(1);
 			if (score >= targetScore) {
 				Win ();
 				break;
@@ -28,6 +29,8 @@ public class GameInfo : MonoBehaviour {
 	
 	public static void AddScoreByBrick(int brickNum) {
 		score += brickNum * 1000;
+        var scoreText = GameObject.Find("Score").GetComponent<Text>();
+        scoreText.text = score + "分";
 		if (score >= targetScore) {
 			Win ();
 		}
@@ -35,6 +38,7 @@ public class GameInfo : MonoBehaviour {
 
 	public static void LoseLife() {
 		lifeNum -= 1;
+        DrawLife();
 		// if no life remaining, show game over
 		if (lifeNum == 0) {
 			Lose ();
@@ -43,8 +47,44 @@ public class GameInfo : MonoBehaviour {
 	
 	public static void GainLife() {
 		lifeNum += 1;
+        // set max value to 3 to simplify draw problem
+        if (lifeNum > 3)
+            lifeNum = 3;
+        DrawLife();
 	}
-	
+
+    private static void DrawLife()
+    {
+        var panel = GameObject.Find("HUD");
+        var heart1 = GameObject.Find("Heart1").GetComponent<Image>();
+        var heart2 = GameObject.Find("Heart2").GetComponent<Image>();
+        var heart3 = GameObject.Find("Heart3").GetComponent<Image>();
+        if (lifeNum < 3)
+        {
+            heart3.enabled = false;
+            if (lifeNum < 2)
+            {
+                heart2.enabled = false;
+                if (lifeNum < 1)
+                {
+                    heart1.enabled = false;
+                }
+                else
+                {
+                    heart1.enabled = true;
+                }
+            }
+            else
+            {
+                heart2.enabled = true;
+            }
+        }
+        else
+        {
+            heart3.enabled = true;
+        }         
+    }
+
 	public static int GetScore() {
 		return score;
 	}
@@ -65,6 +105,8 @@ public class GameInfo : MonoBehaviour {
 	public static void SetTargetScoreByBrick(int value) {
 		brickNum = value;
 		targetScore = brickNum * 2 / 3 * 1000;
+        var targetScoreText = GameObject.Find("TargetScore").GetComponent<Text>();
+        targetScoreText.text = "目标分数：\n" + targetScore;
 	}
 	
 	private static void Win() {
@@ -82,5 +124,5 @@ public class GameInfo : MonoBehaviour {
 		lifeNum = 3;
 		released = false;
 	}
-	
+
 }

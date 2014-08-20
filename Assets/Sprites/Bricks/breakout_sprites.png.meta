@@ -1,0 +1,788 @@
+fileFormatVersion: 2
+guid: b7dae64286b78a74687167c4efb88708
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: breakout_sprites(no shadow)_5
+    21300002: breakout_sprites
+    21300004: brick_1
+    21300006: brick_2
+    21300008: brick_3
+    21300010: breakout_sprites_3
+    21300012: brick_4
+    21300014: breakout_sprites_5
+    21300016: brick_5
+    21300018: star
+    21300020: mud_2
+    21300022: mud_1
+    21300024: breakout_sprites_10
+    21300026: breakout_sprites_11
+    21300028: breakout_sprites_12
+    21300030: breakout_sprites_13
+    21300032: breakout_sprites_14
+    21300034: breakout_sprites_15
+    21300036: breakout_sprites_16
+    21300038: breakout_sprites_17
+    21300040: breakout_sprites_18
+    21300042: 
+    21300044: breakout_sprites_20
+    21300046: breakout_sprites_21
+    21300048: breakout_sprites_22
+    21300050: breakout_sprites_23
+    21300052: fireball
+    21300054: breakout_sprites_25
+    21300056: breakout_sprites_26
+    21300058: breakout_sprites_27
+    21300060: breakout_sprites_28
+    21300062: stone_1
+    21300064: stone_2
+    21300066: stone_3
+    21300068: breakout_sprites_32
+    21300070: breakout_sprites_33
+    21300072: breakout_sprites_34
+    21300074: breakout_sprites_35
+    21300076: breakout_sprites_36
+    21300078: breakout_sprites_37
+    21300080: breakout_sprites_38
+    21300082: shrink
+    21300084: enlarge
+    21300086: speed_up
+    21300088: speed_down
+    21300090: breakout_sprites_43
+    21300092: breakout_sprites_44
+    21300094: pad_small
+    21300096: ball_small
+    21300098: pad_middle
+    21300100: ball_large
+    21300102: pad_large
+    21300104: breakout_sprites_50
+    21300106: breakout_sprites_51
+    21300108: breakout_sprites_52
+    21300110: breakout_sprites_53
+    21300112: breakout_sprites_54
+    21300114: breakout_sprites_55
+    21300116: breakout_sprites_56
+    21300118: breakout_sprites_57
+    21300120: breakout_sprites_58
+    21300122: breakout_sprites_59
+    21300124: breakout_sprites_60
+    21300126: breakout_sprites_61
+    21300128: breakout_sprites_62
+    21300130: breakout_sprites_63
+    21300132: breakout_sprites_64
+    21300134: breakout_sprites_65
+    21300136: breakout_sprites_66
+    21300138: colorful
+    21300140: breakout_sprites_66
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 35
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: brick_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brick_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 368
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brick_3
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 368
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_3
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 369
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brick_4
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 367
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_5
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 369
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: brick_5
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 368
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: star
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 368
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mud_2
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 367
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mud_1
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 368
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 328
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_11
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 328
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 328
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_13
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 328
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 328
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_15
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 328
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_16
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 328
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_17
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 328
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_18
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 328
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: colorful
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 328
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_21
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 288
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_22
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 288
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_23
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 283
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fireball
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 248
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_25
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 288
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_26
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 285
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_27
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 288
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_28
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 288
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stone_1
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stone_2
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 288
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stone_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 248
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_32
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 248
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_33
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 240
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_34
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 241
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_35
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 248
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_36
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 244
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_37
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 248
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_38
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 241
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: shrink
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 248
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enlarge
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 248
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: speed_up
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: speed_down
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 208
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_44
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 80
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pad_small
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 177
+        width: 96
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ball_small
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 184
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pad_middle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 136
+        width: 112
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ball_large
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 136
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pad_large
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 128
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_50
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 40
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_51
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 40
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_52
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 89
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 71
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_54
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_55
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_56
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 0
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_57
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_58
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 0
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_59
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_60
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_61
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 0
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_62
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 0
+        width: 15
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_63
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_64
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_65
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 0
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_66
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 0
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: breakout_sprites_66
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 160
+        width: 80
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

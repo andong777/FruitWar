@@ -3,14 +3,11 @@ using System.Collections;
 
 public class DrawUI : MonoBehaviour {
 
-	public GUISkin myGUISkin;
-
 	float topPos = Screen.height / 20;
 	float buttonWidth = 60;
 	float buttonHeight = 30;
 
 	void OnGUI () {
-		// GUI.skin = myGUISkin;
 		
 		// draw score
 		GUIStyle labelStyle = new GUIStyle();
