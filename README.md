@@ -3,6 +3,19 @@
 
 A 2D brick game using Unity for self study.
 
+# To-do
+
+- add drunk mode.
+- add next stage functionality.
+- add welcome scene and menus.
+- add music and fx.
+
+
+# Log
+
+## 8/20 P.M.
+- Added textures and some animations.
+
 ## 8/18 P.M.
 - Rebuild fireball.
 - Implement rope.
