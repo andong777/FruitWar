@@ -19,10 +19,6 @@ public class GameInfo : MonoBehaviour {
 		// the order is important: check score first, then check brick num
 		do{
             AddScoreByBrick(1);
-			if (score >= targetScore) {
-				Win ();
-				break;
-			}
 			LoseBrick();		
 		}while(false);
 	}
@@ -30,7 +26,7 @@ public class GameInfo : MonoBehaviour {
 	public static void AddScoreByBrick(int brickNum) {
 		score += brickNum * 1000;
         var scoreText = GameObject.Find("Score").GetComponent<Text>();
-        scoreText.text = score + "分";
+        scoreText.text = score + "";
 		if (score >= targetScore) {
 			Win ();
 		}

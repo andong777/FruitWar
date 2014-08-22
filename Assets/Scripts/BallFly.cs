@@ -22,6 +22,9 @@ public class BallFly : MonoBehaviour {
 	
 	// properties
 	public GameObject[] properties;
+
+    // sprites
+    public Sprite[] sprites;
 	
 	void Start () {
 		SetVariables ();
@@ -123,6 +126,12 @@ public class BallFly : MonoBehaviour {
 		angleThreshold = 10f;
 		multifyValue = 3f;
 	}
+
+    void ChooseSprite()
+    {
+        int index = Random.Range(0, sprites.Length - 1);
+        GetComponent<SpriteRenderer>().sprite = sprites[index];
+    }
 	
 	void SetSpeedByRatio (float ratio) {
 		Debug.Log("set speed by "+ratio);

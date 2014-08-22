@@ -60,9 +60,13 @@ public class SetGame: MonoBehaviour {
 
 		// zero ball speed
 		ball.gameObject.rigidbody2D.velocity = Vector3.zero;
+
 		// set ball position
 		ball.position = pad.position + new Vector3(0, ball.gameObject.collider2D.bounds.size.y / 2, 0);
 		
+        // choose a sprite
+        ball.gameObject.SendMessage("ChooseSprite");
+
 		// mark the ball as unreleased
 		GameInfo.Released = false;
 	}

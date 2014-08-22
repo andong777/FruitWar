@@ -1,0 +1,136 @@
+fileFormatVersion: 2
+guid: 87c723f455e68754983b844e0c426461
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: animals
+    21300002: animals_0
+    21300004: animals_1
+    21300006: animals_2
+    21300008: animals_3
+    21300010: animals_4
+    21300012: animals_5
+    21300014: animals_6
+    21300016: animals_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 300
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: animals_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 294
+        width: 239
+        height: 249
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 3, y: 13, z: 1, w: 3}
+    - name: animals_1
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 306
+        width: 287
+        height: 240
+      alignment: 9
+      pivot: {x: .423952967, y: .539539218}
+      border: {x: 0, y: 6, z: 50, w: 0}
+    - name: animals_2
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 308
+        width: 237
+        height: 248
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 9, z: 0, w: 0}
+    - name: animals_3
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 294
+        width: 345
+        height: 283
+      alignment: 9
+      pivot: {x: .403731287, y: .506706297}
+      border: {x: 26, y: 28, z: 96, w: 30}
+    - name: animals_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 287
+        height: 287
+      alignment: 9
+      pivot: {x: .414033711, y: .420646548}
+      border: {x: 1, y: 10, z: 54, w: 51}
+    - name: animals_5
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 0
+        width: 269
+        height: 259
+      alignment: 9
+      pivot: {x: .485889316, y: .44870621}
+      border: {x: 14, y: 0, z: 23, w: 23}
+    - name: animals_6
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 5
+        width: 286
+        height: 239
+      alignment: 9
+      pivot: {x: .45354861, y: .507941008}
+      border: {x: 8, y: 0, z: 45, w: 0}
+    - name: animals_7
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 7
+        width: 253
+        height: 237
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 4, z: 21, w: 0}
+  spritePackingTag: 
+  userData: 
