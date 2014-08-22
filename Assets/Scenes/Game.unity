@@ -594,7 +594,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: a63d328604246a34fb6aa5c8a85e2328, type: 3}
   - {fileID: 21300000, guid: 2e5adc87fd496c846958ac6980646c79, type: 3}
-  - {fileID: 21300000, guid: 3033aaaad14710246af7fc4d85b86717, type: 3}
+  - {fileID: 0}
   - {fileID: 21300000, guid: ddb6c955649fd844aae6ccbc936d9455, type: 3}
   movingSpeed: 10
 --- !u!1 &700018769
