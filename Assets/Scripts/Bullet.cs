@@ -5,9 +5,12 @@ public class Bullet : MonoBehaviour {
 	
 	void OnTriggerEnter2D (Collider2D other) {
 		if(other.gameObject.tag == "Brick"){
-			Destroy(other.gameObject);			
-			GameInfo.KillBrick();			
-			Destroy(gameObject);	// destroy itself also
+            // drop brick
+            other.rigidbody2D.isKinematic = false;	// let it fall
+            other.collider2D.isTrigger = true;	// let it be transparent
+            other.gameObject.tag = "FallBrick";	// to avoid a second contact
+				
+			Destroy(gameObject);	// destroy itself
 		}
 	}
 }

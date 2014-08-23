@@ -7,7 +7,7 @@ public class Gun : MonoBehaviour {
 		if (other.gameObject.tag == "Pad"){
 
 			Debug.Log("get gun");
-			other.gameObject.SendMessage("LoadBullets");
+			other.SendMessage("LoadBullets");
 		}
 	}
 }

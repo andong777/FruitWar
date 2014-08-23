@@ -19,6 +19,8 @@ public class BallFly : MonoBehaviour {
 	
 	// the probability of generating property
 	float propertyProbability = 0.2f;
+
+    public GameObject star;
 	
 	// properties
 	public GameObject[] properties;
@@ -33,17 +35,18 @@ public class BallFly : MonoBehaviour {
 	
 	void Update () {
 		// Control the ball.
-		if (Input.GetButtonUp ("Fire1") && !GameInfo.Released) {
+		if (Input.GetButtonUp ("Fire1") && !Manager.Released) {
 			Debug.Log("Fire");
 			// choose a random direction.			
 			float dirX = Random.Range(-0.8f, 0.8f);
 			float dirY = Mathf.Sqrt(1 - dirX * dirX);
 			Vector2 direct = new Vector2(dirX, dirY);
-			
+
+            //rigidbody2D.WakeUp();
 			rigidbody2D.velocity = direct * normalSpeed;
 			
 			// mark as released
-			GameInfo.Released = true;
+			Manager.Released = true;
 		}
 	}
 	
@@ -52,7 +55,9 @@ public class BallFly : MonoBehaviour {
 	 * 	2. where ball flies horizontally
 	 */
 	void FixedUpdate () {
-		if (GameInfo.Released) {
+        
+		if (Manager.Released) 
+        {
 			Vector3 velocity = rigidbody2D.velocity;
 		
 			// to solve problem 1
@@ -73,8 +78,13 @@ public class BallFly : MonoBehaviour {
 				float amend = Mathf.Sign(velocity.y) * multifyValue;
 				rigidbody2D.velocity = velocity + new Vector3(0, amend, 0);
 			}
-			
-		}
+
+        }
+        else
+        {
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.angularVelocity = 0f;
+        }
 	}
 	
 	// for normal ball
@@ -114,10 +124,20 @@ public class BallFly : MonoBehaviour {
 	}
 	
 	void SetVariables () {	
-		Debug.Log("speed reset");
-		// recover previous speed
-		rigidbody2D.velocity = rigidbody2D.velocity.normalized * normalSpeed;
-		
+
+        if (Manager.Released)
+        {
+            // recover previous speed
+            Debug.Log("return to normal");
+            rigidbody2D.velocity = rigidbody2D.velocity.normalized * normalSpeed;
+        }
+        else
+        {            
+            Debug.Log("zero speed");
+            rigidbody2D.velocity = Vector2.zero;    // zero ball speed
+            rigidbody2D.angularVelocity = 0f;        // zero angular speed
+            rigidbody2D.Sleep();                    // make sure no move
+        }
 		// recover thresholds and values
 		speedMinValue = normalSpeed - 1;
 		speedMinThreshold = speedMinValue * speedMinValue;
@@ -159,5 +179,20 @@ public class BallFly : MonoBehaviour {
 		collider2D.isTrigger = false;
 		ConvertBall.work = false;
 	}
-	
+
+    void DropStar()
+    {
+        Instantiate(star, new Vector3(0, 2, 0), Quaternion.identity);
+    }
+
+    void Reset()
+    {
+        // disable fireball
+        LoseFireBall();
+        // choose a sprite
+        ChooseSprite();
+        // reset speed
+        SetVariables();
+    }
+
 }

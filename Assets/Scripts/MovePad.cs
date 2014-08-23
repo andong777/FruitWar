@@ -5,10 +5,10 @@ public class MovePad : MonoBehaviour {
 
 	public float speed = 20f;
 
-	private GameObject ball = null;
+	private Transform ball = null;
 
 	void Awake() {
-		ball = GameObject.Find ("Ball");
+		ball = GameObject.Find ("Ball").transform;
 	}
 
 	void Update () {
@@ -18,16 +18,16 @@ public class MovePad : MonoBehaviour {
 		rigidbody2D.velocity = offset;
 		
 		// if the ball unreleased, move it also
-		if(!GameInfo.Released) {
+		if(!Manager.Released) {
 			float up = gameObject.collider2D.bounds.size.y / 2 + ball.collider2D.bounds.size.y / 2;
-			ball.transform.position = transform.position + new Vector3(0, up, 0);
+			ball.position = transform.position + new Vector3(0, up, 0);
 		}
 		
 	}
 	
 	void OnCollisionEnter2D (Collision2D other) {
 		// if it is the released ball, add effect on the ball
-		if(other.gameObject.tag == "Ball" && GameInfo.Released){
+		if(other.gameObject.tag == "Ball" && Manager.Released){
 			other.rigidbody.velocity = other.rigidbody.velocity / 2 + rigidbody2D.velocity / 3;			
 		}
 		
@@ -42,7 +42,7 @@ public class MovePad : MonoBehaviour {
 		// if it is a brick, do KillBrick
 		else if(other.gameObject.tag == "FallBrick"){
 			Destroy(other.gameObject);
-			GameInfo.KillBrick();
+			Manager.KillBrick();
 		}
 	}
 	
@@ -52,7 +52,13 @@ public class MovePad : MonoBehaviour {
 	}
 	
 	void LoseRope () {
-		GetComponent<DistanceJoint2D>().enabled = true;
+		GetComponent<DistanceJoint2D>().enabled = false;
 		Debug.Log("lose rope");
 	}
+
+    void Reset()
+    {
+        LoseRope(); // disable rope
+        transform.localScale = Vector3.one; // resize pad
+    }
 }

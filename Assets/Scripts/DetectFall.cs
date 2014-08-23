@@ -11,16 +11,15 @@ public class DetectFall : MonoBehaviour {
 		if (other.gameObject.tag == "Ball") {
 			// if it is bottom wall, execute code, else let ConvertBall takes effect
 			if (bottom) {
-				GameInfo.LoseLife();	// subtract one life of the player
-				other.gameObject.SendMessage("SetVariables");	// recover normal thresholds and values
-				GameObject.Find ("GameManager").SendMessage("SetPadAndBall");	// reset position, zero speed*
+				Manager.LoseLife();	// subtract one life of the player
+                SetGame.Instance.SetPadAndBall();   // reset position, zero speed
 			}			
 		}
 		// remove other objects to save memory
 		else {
 			Debug.Log("catch something");
 			if(other.gameObject.tag == "FallBrick"){
-				GameInfo.LoseBrick();	// to help game manager count brick number
+				Manager.LoseBrick();	// to help game manager count brick number
 			}
 			Destroy(other.gameObject);
 		}

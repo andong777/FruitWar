@@ -45,7 +45,6 @@ public class ScrollBackground : MonoBehaviour {
 
     void Update()
     {        
-        float threshold = -3f;
         bg1.Translate(new Vector3(-1 * movingSpeed * Time.deltaTime, 0, 0));
         bg2.Translate(new Vector3(-1 * movingSpeed * Time.deltaTime, 0, 0));
         if (bg1.position.x + theSprite.bounds.size.x < 0)

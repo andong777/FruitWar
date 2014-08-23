@@ -3,6 +3,8 @@ using System.Collections;
 
 public class SetGame: MonoBehaviour {
 
+    private static SetGame _instance;   // singleton
+
 	// Collider components
 	public Transform leftWall;
 	public Transform rightWall;
@@ -22,8 +24,19 @@ public class SetGame: MonoBehaviour {
 	// the bricks
 	public GameObject[] bricks;
 	float percentage = 0.75f;	// use how many spaces to generate bricks	
-	
+
+    private SetGame() {}
+
+    public static SetGame Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
 	void Awake () {
+        _instance = this;
 		pad = GameObject.Find("Pad").transform;
 		ball = GameObject.Find("Ball").transform;
 		Random.seed = System.DateTime.Now.Millisecond;
@@ -32,46 +45,47 @@ public class SetGame: MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// get the border
-		leftPos = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).x;
-		rightPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x;
-		topPos = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0)).y;
-		bottomPos = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y;
+        Camera mainCam = Camera.main;
+		leftPos = mainCam.ScreenToWorldPoint(new Vector3(0, 0, 0)).x;
+        rightPos = mainCam.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x;
+        topPos = mainCam.ScreenToWorldPoint(new Vector3(0, Screen.height, 0)).y;
+        bottomPos = mainCam.ScreenToWorldPoint(new Vector3(0, 0, 0)).y;
 		
 		// set walls
 		leftWall.position = new Vector3(leftPos - leftWall.gameObject.collider2D.bounds.size.x / 2, 0, 0);
 		rightWall.position = new Vector3(rightPos + rightWall.gameObject.collider2D.bounds.size.x / 2, 0, 0);
 		topWall.position = new Vector3(0, topPos + topWall.gameObject.collider2D.bounds.size.y / 2, 0);
-		bottomWall.position = new Vector3(0, bottomPos - bottomWall.gameObject.collider2D.bounds.size.y / 2, 0);		
-	
-		// set the pad and the ball
-		SetPadAndBall();
-		// spawn bricks randomly.
-		SpawnBricks();
+		bottomWall.position = new Vector3(0, bottomPos - bottomWall.gameObject.collider2D.bounds.size.y / 2, 0);
+
+        Reset();    // reset pad, ball and bricks
 	}
-	
-	void SetPadAndBall() {
+
+    public void Reset()
+    {
+        // set the pad and the ball
+        SetPadAndBall();
+        // spawn bricks randomly.
+        SpawnBricks();
+    }
+
+	public void SetPadAndBall() {
 		// set pad position
 		pad.position = new Vector3(0, bottomPos + pad.collider2D.bounds.size.y, 0);
-		// disable rope
-		pad.gameObject.SendMessage("LoseRope");
-		
-		// return ball to normal
-		ball.gameObject.SendMessage("LoseFireBall");
-
-		// zero ball speed
-		ball.gameObject.rigidbody2D.velocity = Vector3.zero;
-
 		// set ball position
 		ball.position = pad.position + new Vector3(0, ball.gameObject.collider2D.bounds.size.y / 2, 0);
 		
-        // choose a sprite
-        ball.gameObject.SendMessage("ChooseSprite");
-
 		// mark the ball as unreleased
-		GameInfo.Released = false;
+		Manager.Released = false;
+
+		// return pad to normal
+		pad.SendMessage("Reset");
+		
+		// return ball to normal
+        ball.SendMessage("Reset");
+
 	}
 	
-	void SpawnBricks () {
+	public void SpawnBricks () {
 		// get brick info. add a little distance between them
 		float brickWidth = bricks[0].renderer.bounds.size.x * 1.1f;
 		float brickHeight = bricks[0].renderer.bounds.size.y * 1.1f;
@@ -101,7 +115,7 @@ public class SetGame: MonoBehaviour {
 			}
 		}
 		
-		GameInfo.SetTargetScoreByBrick(brickCount);	// set target score according to bricks
+		Manager.SetTargetScoreByBrick(brickCount);	// set target score according to bricks
 		
 	}
 

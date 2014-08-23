@@ -12,9 +12,9 @@ public class ResetButton : MonoBehaviour {
 
     void HandleReset(Object obj)
     {
-        GameObject.Find("GameManager").SendMessage("SetPadAndBall");
-        GameObject.Find("GameManager").SendMessage("SpawnBricks");
-        GameInfo.Reset();
+        GameObject.Find("GameManager").SendMessage("Reset");
+        SetGame.Instance.Reset();
+        Manager.Reset();
     }
 	
 }

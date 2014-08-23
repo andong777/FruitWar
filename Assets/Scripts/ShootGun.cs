@@ -15,7 +15,7 @@ public class ShootGun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonUp("Fire1") && bulletNum > 0){
+		if(Input.GetButtonUp("Fire1") && bulletNum > 0 && !Manager.Released){
 			Debug.Log("shoot the gun");
 			Vector3 position = transform.position + new Vector3(0, gameObject.collider2D.bounds.size.y * 2, 0);
 			var aBullet = Instantiate(bullet, position, Quaternion.identity) as GameObject;
