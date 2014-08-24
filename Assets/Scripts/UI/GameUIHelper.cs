@@ -10,7 +10,7 @@ public class GameUIHelper : MonoBehaviour {
     public Text targetScoreText;
     public Text stageText;
     public Text heartText;
-
+    public Text bulletText;
 
     private GameUIHelper() {}
 
@@ -36,38 +36,7 @@ public class GameUIHelper : MonoBehaviour {
 
     public void DrawLife(int lifeNum)
     {
-        var panel = GameObject.Find("HUD");
-        var heart1 = GameObject.Find("Heart1").GetComponent<Image>();
-        var heart2 = GameObject.Find("Heart2").GetComponent<Image>();
-        var heart3 = GameObject.Find("Heart3").GetComponent<Image>();
-
-        if (panel == null || heart1 == null || heart2 == null || heart3 == null)
-            return;
-
-        if (lifeNum < 3)
-        {
-            heart3.enabled = false;
-            if (lifeNum < 2)
-            {
-                heart2.enabled = false;
-                if (lifeNum < 1)
-                {
-                    heart1.enabled = false;
-                }
-                else
-                {
-                    heart1.enabled = true;
-                }
-            }
-            else
-            {
-                heart2.enabled = true;
-            }
-        }
-        else
-        {
-            heart3.enabled = true;
-        }
+        heartText.text = "" + lifeNum;
     }
 
     public void DrawTargetScore(int targetScore)
@@ -85,4 +54,8 @@ public class GameUIHelper : MonoBehaviour {
         stageText.text = "第" + stage + "关";
     }
 
+    public void DrawBullet(int bulletNum)
+    {
+        bulletText.text = "" + bulletNum;
+    }
 }

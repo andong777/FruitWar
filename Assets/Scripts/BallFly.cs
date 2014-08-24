@@ -27,6 +27,8 @@ public class BallFly : MonoBehaviour {
 
     // sprites
     public Sprite[] sprites;
+
+    bool drunk;
 	
 	void Start () {
 		SetVariables ();
@@ -37,12 +39,12 @@ public class BallFly : MonoBehaviour {
 		// Control the ball.
 		if (Input.GetButtonUp ("Fire1") && !Manager.Released) {
 			Debug.Log("Fire");
-			// choose a random direction.			
+			// choose a random direction		
 			float dirX = Random.Range(-0.8f, 0.8f);
 			float dirY = Mathf.Sqrt(1 - dirX * dirX);
 			Vector2 direct = new Vector2(dirX, dirY);
 
-            //rigidbody2D.WakeUp();
+            rigidbody2D.WakeUp();
 			rigidbody2D.velocity = direct * normalSpeed;
 			
 			// mark as released
@@ -74,10 +76,21 @@ public class BallFly : MonoBehaviour {
 			// to solve problem 2
 			float angle = Mathf.Atan(velocity.y / velocity.x) * Mathf.Rad2Deg;
 			if (Mathf.Abs(angle) < angleThreshold) {
-				Debug.Log("Angle amendment takes effect: "+angle);
+				// Debug.Log("Angle amendment takes effect: "+angle);
 				float amend = Mathf.Sign(velocity.y) * multifyValue;
 				rigidbody2D.velocity = velocity + new Vector3(0, amend, 0);
 			}
+
+            // drunk ball mode
+            if (drunk)
+            {
+                float force = 10f;
+                // choose a random direction	
+                float dirX = Random.Range(-0.8f, 0.8f);
+			    float dirY = Mathf.Sqrt(1 - dirX * dirX);
+			    Vector2 direct = new Vector2(dirX, dirY);
+                rigidbody2D.AddForce(direct * force);
+            }
 
         }
         else
@@ -169,7 +182,6 @@ public class BallFly : MonoBehaviour {
 	}
 	
 	void MakeFireBall (float time){
-	
 		collider2D.isTrigger = true;
 		ConvertBall.work = true;
 		Invoke ("LoseFireBall", time);
@@ -180,6 +192,17 @@ public class BallFly : MonoBehaviour {
 		ConvertBall.work = false;
 	}
 
+    void MakeDrunkBall(float time)
+    {
+        drunk = true;
+        Invoke("LoseDrunkBall", time);
+    }
+
+    void LoseDrunkBall()
+    {
+        drunk = false;
+    }
+
     void DropStar()
     {
         Instantiate(star, new Vector3(0, 2, 0), Quaternion.identity);
@@ -189,6 +212,8 @@ public class BallFly : MonoBehaviour {
     {
         // disable fireball
         LoseFireBall();
+        // disable drunkball
+        LoseDrunkBall();
         // choose a sprite
         ChooseSprite();
         // reset speed

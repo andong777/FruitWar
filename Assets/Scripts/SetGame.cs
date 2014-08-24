@@ -66,6 +66,7 @@ public class SetGame: MonoBehaviour {
         SetPadAndBall();
         // spawn bricks randomly.
         SpawnBricks();
+
     }
 
 	public void SetPadAndBall() {
@@ -116,7 +117,5 @@ public class SetGame: MonoBehaviour {
 		}
 		
 		Manager.SetTargetScoreByBrick(brickCount);	// set target score according to bricks
-		
 	}
-
 }

@@ -9,7 +9,7 @@ public class Star : MonoBehaviour {
         {
             // catch star, go to next stage
             Debug.Log("going to next stage");
-            Manager.NextStage();
+            Manager.Break();
         }
     }
 
