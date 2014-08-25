@@ -5,7 +5,7 @@ A 2D brick game using Unity for self study.
 
 # To-do
 
-- set game background according to stage number.
+- modify area to spawn bricks.
 - add music and fx.
 - stretch several background pictures to fit for mobile screens.
 - more animations: ball, scene transition, etc.

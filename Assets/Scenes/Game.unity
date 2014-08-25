@@ -574,12 +574,33 @@ MonoBehaviour:
   rightWall: {fileID: 231011070}
   topWall: {fileID: 297654668}
   bottomWall: {fileID: 2134282983}
-  bricks:
-  - {fileID: 100000, guid: b476ba5adab1bf14fa46d0986f3cca0e, type: 2}
-  - {fileID: 100000, guid: 803d79592be6ea4479386c7876832a18, type: 2}
-  - {fileID: 100000, guid: 95b48c92e8c1860499c6a98a4b38f1b9, type: 2}
-  - {fileID: 100000, guid: a43b3e7c948417846b0cce436f70c934, type: 2}
-  - {fileID: 100000, guid: 2869ca03862679f498fc90a69aa4477f, type: 2}
+  brick: {fileID: 100000, guid: 7826646ca7b42374bb5f5ed668dc1579, type: 2}
+  brickSprites:
+  - {fileID: 21300002, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300004, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300006, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300008, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300010, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300012, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300058, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300018, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300014, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300016, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300022, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300020, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300026, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300028, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300030, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300032, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300034, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300036, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300038, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300040, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300060, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300042, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300044, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300046, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
+  - {fileID: 21300048, guid: de169f67de518d04c8bb25058d3a25bd, type: 3}
 --- !u!114 &488197817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,6 +1699,7 @@ GameObject:
   - 114: {fileID: 1691259620}
   - 114: {fileID: 1691259624}
   - 114: {fileID: 1691259623}
+  - 114: {fileID: 1691259626}
   m_Layer: 0
   m_Name: Pad
   m_TagString: Pad
@@ -1706,8 +1728,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: 595f99b4b89e8004fbe8ec7c3ec8691c, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: 3.23001766, y: .647602677}
-  m_Center: {x: 0, y: .00199747086}
+  m_Size: {x: 2, y: 1.5}
+  m_Center: {x: 0, y: 0}
 --- !u!114 &1691259620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1740,7 +1762,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 862190179
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300098, guid: b7dae64286b78a74687167c4efb88708, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f55b77cb71e8aa249a7771aafb2f912d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!50 &1691259622
 Rigidbody2D:
@@ -1793,6 +1815,27 @@ DistanceJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Distance: 10
   m_MaxDistanceOnly: 1
+--- !u!114 &1691259626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1691259617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6336882c355dcab4c93459b901f85e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: f55b77cb71e8aa249a7771aafb2f912d, type: 3}
+  - {fileID: 21300000, guid: f1c286b951b160149be16577477b4728, type: 3}
+  - {fileID: 21300000, guid: c214c7dc66c9074489a40ec1b068d580, type: 3}
+  - {fileID: 21300000, guid: 63171a31300b8f042b7964acedd6aa1f, type: 3}
+  - {fileID: 21300000, guid: f85ea8bbb6083634abcead139b4ffc26, type: 3}
+  - {fileID: 21300000, guid: 8488a71f1aea1ee42a84be4c9059d192, type: 3}
+  - {fileID: 21300000, guid: ad7efefbcff931746960392b2e8a9818, type: 3}
+  - {fileID: 21300000, guid: c543eb3fd39f5e14f80e75070c4318f9, type: 3}
+  - {fileID: 21300000, guid: 417cc293597dba4478a125864e064e03, type: 3}
 --- !u!1 &1979907645
 GameObject:
   m_ObjectHideFlags: 0

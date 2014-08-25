@@ -24,7 +24,7 @@ public class ScrollBackground : MonoBehaviour {
         var sr2 = bg2.GetComponent<SpriteRenderer>();
 
         // first choose a sprite
-        int index = Random.Range(0, sprites.Length - 1);
+        int index = Random.Range(0, sprites.Length);
         theSprite = sprites[index];
         sr1.sprite = theSprite;
         sr2.sprite = theSprite;

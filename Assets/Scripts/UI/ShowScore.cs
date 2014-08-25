@@ -13,6 +13,7 @@ public class ShowScore : MonoBehaviour {
 	void Start () {
         endScore = Manager.GetTotalScore();
         startScore = endScore - Manager.GetStageScore();
+
         Debug.Log(startScore + "->" + endScore);
         stop.onClick.AddListener(HandleStop);
 
@@ -26,7 +27,7 @@ public class ShowScore : MonoBehaviour {
         for (int i = startScore; i <= endScore; i += 100)
         {
             score.text = i + "";
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

@@ -110,8 +110,6 @@ public class Manager {
 
     public static void NextStage()
     {        
-        // add stage score to total score
-        totalScore += stageScore;
         // reset scene variables
         ResetStage();
         // set game
@@ -125,6 +123,9 @@ public class Manager {
 
     public static void Break()
     {
+        // add stage score to total score
+        totalScore += stageScore;
+
         Application.LoadLevel("Break");
     }
 
