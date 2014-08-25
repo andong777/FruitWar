@@ -44,7 +44,6 @@ public class SaveLoad {
                 string name = PlayerPrefs.GetString(i + "Name");
                 PlayerPrefs.SetString(i + "Name", oldName);
                 PlayerPrefs.SetInt(i + "Score", oldScore);
-                Debug.Log("Save: " + i + " " + oldName + " " + oldScore);
                 oldName = name;
                 oldScore = score;
             }
@@ -63,10 +62,9 @@ public class SaveLoad {
         cursor = cursor - recordsPerPage > start ? cursor - recordsPerPage - 1 : start;
         while (i < recordsPerPage && PlayerPrefs.HasKey(cursor + "Name"))
         {
-            Debug.Log(cursor);
             string name = PlayerPrefs.GetString(cursor + "Name");
             int score = PlayerPrefs.GetInt(cursor + "Score");
-            page[i++] = new Data(name, score);
+            page[i++] = new Data(cursor, name, score);
             
             cursor ++;
         }
@@ -80,10 +78,9 @@ public class SaveLoad {
         Debug.Log("---Next---");
         while (i < recordsPerPage && PlayerPrefs.HasKey(cursor + "Name"))
         {
-            Debug.Log(cursor);
             string name = PlayerPrefs.GetString(cursor + "Name");
             int score = PlayerPrefs.GetInt(cursor + "Score");
-            page[i++] = new Data(name, score);
+            page[i++] = new Data(cursor, name, score);
             
             cursor ++;
         }
@@ -114,10 +111,20 @@ public class SaveLoad {
     }
 
     public struct Data {
+        public int no;
         public string name;
         public int score;
 
+        // for saving
         public Data (string name, int score){
+            no = 0;   // no use here
+            this.name = name;
+            this.score = score;
+        }
+        // for loading, containing rank number
+        public Data(int no, string name, int score)
+        {
+            this.no = no;
             this.name = name;
             this.score = score;
         }

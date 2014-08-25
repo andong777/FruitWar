@@ -5,14 +5,21 @@ A 2D brick game using Unity for self study.
 
 # To-do
 
-- modify area to spawn bricks.
 - add music and fx.
-- stretch several background pictures to fit for mobile screens.
 - more animations: ball, scene transition, etc.
+- add touch input support.
+- organise the project and deploy.
+
+# Log
+
+## 8/25 P.M.
+- stretch several background pictures to fit for mobile screens.
 - use final game art.
 - complete UI part.
 
-# Log
+## 8/25 A.M.
+- complete UI.
+- modify the functionality to spawn bricks.
 
 ## 8/24 P.M.
 - implement score and rank functionality.

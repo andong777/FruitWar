@@ -23,7 +23,7 @@ public class SetGame: MonoBehaviour {
 	
 	// the bricks
 	public GameObject brick;
-	float percentage = 0.875f;	// use how many spaces to generate bricks	
+	float spacePercentage = 0.2f;	// how many left blank
     public Sprite[] brickSprites;
 
     private SetGame() {}
@@ -103,20 +103,30 @@ public class SetGame: MonoBehaviour {
 		int colNum = (int)(height / brickHeight);
 		bool[,] used = new bool[rowNum, colNum];
 		
+        for (int i = 0; i < rowNum * colNum * spacePercentage; i++)
+        {
+            int row = Random.Range(0, rowNum);
+            int col = Random.Range(0, colNum);
+            used[row, col] = true;
+        }
+
 		int brickCount = 0;	// count how many bricks are generated
-		for(int i = 0; i < rowNum * colNum * percentage; i++){
-			int row = Random.Range(0, rowNum);
-			int col = Random.Range(0, colNum);
-			if(!used[row, col]){
-				used[row, col] = true;
-				brickCount ++;
-				float x = leftPos + distX + brickWidth * (row + 0.5f);
-				float y = bottomPos + distY + brickHeight * (col + 0.5f);
-				var theBrick = Instantiate(brick, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+        for (int row = 0; row < rowNum; row++)
+        {
+            for (int col = 0; col < colNum; col++)
+            {
+                if (used[row, col])
+                    continue;
+
+                used[row, col] = true;
+                brickCount++;
+                float x = leftPos + distX + brickWidth * (row + 0.5f);
+                float y = bottomPos + distY + brickHeight * (col + 0.5f);
+                var theBrick = Instantiate(brick, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
                 int index = Random.Range(0, brickSprites.Length);
                 theBrick.GetComponent<SpriteRenderer>().sprite = brickSprites[index];
-			}
-		}
+            }
+        }
 		
 		Manager.SetTargetScoreByBrick(brickCount);	// set target score according to bricks
 	}

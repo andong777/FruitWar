@@ -14,6 +14,13 @@ public class ChooseSprite : MonoBehaviour {
     void Choose()
     {
         int index = Random.Range(0, sprites.Length);
-        GetComponent<SpriteRenderer>().sprite = sprites[index];
+        try
+        {
+            GetComponent<SpriteRenderer>().sprite = sprites[index];
+        }
+        catch (System.Exception e)
+        {
+            GetComponent<UnityEngine.UI.Image>().sprite = sprites[index];
+        }
     }
 }

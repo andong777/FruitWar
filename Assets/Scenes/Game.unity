@@ -716,6 +716,7 @@ GameObject:
   - 50: {fileID: 731946815}
   - 58: {fileID: 731946816}
   - 114: {fileID: 731946817}
+  - 114: {fileID: 731946819}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -780,19 +781,10 @@ MonoBehaviour:
   - {fileID: 100000, guid: a98dd023ded5524408f7c276125aa5f4, type: 2}
   - {fileID: 100000, guid: 4915cea64fe46494fbc20ebe8f0afcb1, type: 2}
   - {fileID: 100000, guid: 34b0f9f276714504ea6eb40bcc75933e, type: 2}
-  - {fileID: 100000, guid: 23c6eeb32399a324eb11cc1deb38a128, type: 2}
+  - {fileID: 100000, guid: 33dfbcbfd78dfae4aa03fa610cd51ce9, type: 2}
   - {fileID: 100000, guid: e2ef6d264233fec4eb1e803bcf3445c2, type: 2}
   - {fileID: 100000, guid: 34ec72fcd5c6cf54d8376b362a0ec0c5, type: 2}
   - {fileID: 100000, guid: 96102bad9fbb0574eb5ef2c6c56c55f1, type: 2}
-  sprites:
-  - {fileID: 21300002, guid: 87c723f455e68754983b844e0c426461, type: 3}
-  - {fileID: 21300004, guid: 87c723f455e68754983b844e0c426461, type: 3}
-  - {fileID: 21300006, guid: 87c723f455e68754983b844e0c426461, type: 3}
-  - {fileID: 21300008, guid: 87c723f455e68754983b844e0c426461, type: 3}
-  - {fileID: 21300010, guid: 87c723f455e68754983b844e0c426461, type: 3}
-  - {fileID: 21300012, guid: 87c723f455e68754983b844e0c426461, type: 3}
-  - {fileID: 21300014, guid: 87c723f455e68754983b844e0c426461, type: 3}
-  - {fileID: 21300016, guid: 87c723f455e68754983b844e0c426461, type: 3}
 --- !u!212 &731946818
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -815,6 +807,26 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: 87c723f455e68754983b844e0c426461, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &731946819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 731946813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6336882c355dcab4c93459b901f85e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300002, guid: 87c723f455e68754983b844e0c426461, type: 3}
+  - {fileID: 21300004, guid: 87c723f455e68754983b844e0c426461, type: 3}
+  - {fileID: 21300006, guid: 87c723f455e68754983b844e0c426461, type: 3}
+  - {fileID: 21300008, guid: 87c723f455e68754983b844e0c426461, type: 3}
+  - {fileID: 21300010, guid: 87c723f455e68754983b844e0c426461, type: 3}
+  - {fileID: 21300012, guid: 87c723f455e68754983b844e0c426461, type: 3}
+  - {fileID: 21300014, guid: 87c723f455e68754983b844e0c426461, type: 3}
+  - {fileID: 21300016, guid: 87c723f455e68754983b844e0c426461, type: 3}
 --- !u!1 &732586076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,7 +1707,6 @@ GameObject:
   - 212: {fileID: 1691259621}
   - 50: {fileID: 1691259622}
   - 61: {fileID: 1691259619}
-  - 232: {fileID: 1691259625}
   - 114: {fileID: 1691259620}
   - 114: {fileID: 1691259624}
   - 114: {fileID: 1691259623}
@@ -1802,19 +1813,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 100000, guid: f106a189410dbac4186b072fc2137286, type: 2}
---- !u!232 &1691259625
-DistanceJoint2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1691259617}
-  m_Enabled: 0
-  m_CollideConnected: 1
-  m_ConnectedRigidBody: {fileID: 731946815}
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_Distance: 10
-  m_MaxDistanceOnly: 1
 --- !u!114 &1691259626
 MonoBehaviour:
   m_ObjectHideFlags: 0

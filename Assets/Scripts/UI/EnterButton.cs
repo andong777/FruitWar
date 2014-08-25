@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class EnterButton : MonoBehaviour {
 
+    bool hasInput = false; // if user has input
     public Text input;
 
     void Start()
@@ -15,6 +16,8 @@ public class EnterButton : MonoBehaviour {
     void HandleEnter()
     {
         string name = input.text;
+        if (!hasInput || name == null || name == "")
+            name = "幽灵";
         int score = Manager.GetTotalScore();
         SaveLoad.Instance.Save(new SaveLoad.Data(name, score));
     }

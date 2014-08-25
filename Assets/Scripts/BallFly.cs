@@ -25,9 +25,6 @@ public class BallFly : MonoBehaviour {
 	// properties
 	public GameObject[] properties;
 
-    // sprites
-    public Sprite[] sprites;
-
     bool drunk;
 	
 	void Start () {
@@ -160,12 +157,6 @@ public class BallFly : MonoBehaviour {
 		multifyValue = 3f;
 	}
 
-    void ChooseSprite()
-    {
-        int index = Random.Range(0, sprites.Length - 1);
-        GetComponent<SpriteRenderer>().sprite = sprites[index];
-    }
-	
 	void SetSpeedByRatio (float ratio) {
 		Debug.Log("set speed by "+ratio);
 
@@ -214,8 +205,6 @@ public class BallFly : MonoBehaviour {
         LoseFireBall();
         // disable drunkball
         LoseDrunkBall();
-        // choose a sprite
-        ChooseSprite();
         // reset speed
         SetVariables();
     }

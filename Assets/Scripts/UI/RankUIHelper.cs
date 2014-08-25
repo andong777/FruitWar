@@ -4,7 +4,10 @@ using UnityEngine.UI;
 
 public class RankUIHelper : MonoBehaviour {
 
-    public Text content;
+    public Text noText;
+    public Text nameText;
+    public Text scoreText;
+
     public Button prevButton;
     public Button nextButton;
 
@@ -16,26 +19,37 @@ public class RankUIHelper : MonoBehaviour {
         HandleNext();
     }
 
-    string Format(SaveLoad.Data[] data)
+    void Format(SaveLoad.Data[] data)
     {
-        var builder = new System.Text.StringBuilder();
-        builder.Append("No.\t\tName\t\tScore\n");
+        var noBuilder = new System.Text.StringBuilder();
+        var nameBuilder = new System.Text.StringBuilder();
+        var scoreBuilder = new System.Text.StringBuilder();
+
+        noBuilder.Append("<b>No.</b>");
+        nameBuilder.Append("<b>玩家</b>");
+        scoreBuilder.Append("<b>得分</b>");
+
         for (int i = 0; i < data.Length && data[i].score > 0; i++)
-        {   
-            builder.Append("\n" + (i + 1) + "\t\t" + data[i].name + "\t\t" + data[i].score + '\n');
+        {              
+            noBuilder.Append("\n" + data[i].no);
+            nameBuilder.Append("\n" + data[i].name);
+            scoreBuilder.Append("\n" + data[i].score);
         }
-        return builder.ToString();
+
+        noText.text = noBuilder.ToString();
+        nameText.text = nameBuilder.ToString();
+        scoreText.text = scoreBuilder.ToString();
     }
 
     void HandlePrev()
     {
         var page = SaveLoad.Instance.Prev();
-        content.text = Format(page);
+        Format(page);
     }
 
     void HandleNext()
     {
         var page = SaveLoad.Instance.Next();
-        content.text = Format(page);
+        Format(page);
     }
 }
