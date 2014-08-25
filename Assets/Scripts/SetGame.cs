@@ -23,7 +23,7 @@ public class SetGame: MonoBehaviour {
 	
 	// the bricks
 	public GameObject brick;
-	float percentage = 0.75f;	// use how many spaces to generate bricks	
+	float percentage = 0.875f;	// use how many spaces to generate bricks	
     public Sprite[] brickSprites;
 
     private SetGame() {}

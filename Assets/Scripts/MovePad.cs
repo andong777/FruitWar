@@ -45,20 +45,9 @@ public class MovePad : MonoBehaviour {
 			Manager.KillBrick();
 		}
 	}
-	
-	void MakeRope (float time) {
-		GetComponent<DistanceJoint2D>().enabled = true;
-		Invoke ("LoseRope", time);
-	}
-	
-	void LoseRope () {
-		GetComponent<DistanceJoint2D>().enabled = false;
-		Debug.Log("lose rope");
-	}
 
     void Reset()
     {
-        LoseRope(); // disable rope
         transform.localScale = Vector3.one; // resize pad
     }
 }
