@@ -68,6 +68,11 @@ public class SetGame: MonoBehaviour {
         // spawn bricks randomly.
         SpawnBricks();
 
+        // at last, update UI
+        GameUIHelper.Instance.DrawStage(Manager.GetStage());
+        GameUIHelper.Instance.DrawLife(Manager.GetLifeNum());
+        GameUIHelper.Instance.DrawScore(0);
+        GameUIHelper.Instance.DrawTargetScore(Manager.GetTargetScore());
     }
 
 	public void SetPadAndBall() {

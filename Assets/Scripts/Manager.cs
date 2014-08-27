@@ -69,6 +69,16 @@ public class Manager {
         GameUIHelper.Instance.DrawLife(lifeNum);
 	}
 
+    public static int GetLifeNum()
+    {
+        return lifeNum;
+    }
+
+    public static int GetStage()
+    {
+        return stage;
+    }
+
 	public static int GetStageScore() {
 		return stageScore;
 	}
@@ -94,18 +104,15 @@ public class Manager {
         ResetStage();
         lifeNum = initialLifeNum;
 
-        // at last, update UI
-        GameUIHelper.Instance.DrawStage(stage);
-        GameUIHelper.Instance.DrawLife(lifeNum);
-        GameUIHelper.Instance.DrawScore(0);
-        GameUIHelper.Instance.DrawTargetScore(targetScore);
     }
 
 	public static void ResetStage () {
 		stageScore = 0;
 		released = false;
         won = false;
-        SetGame.Instance.Reset();
+        var setGame = SetGame.Instance;
+        if (setGame != null)
+            setGame.Reset();
 	}
 
     public static void NextStage()

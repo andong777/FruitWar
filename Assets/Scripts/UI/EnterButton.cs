@@ -21,5 +21,7 @@ public class EnterButton : MonoBehaviour {
         Debug.Log(name);
         int score = Manager.GetTotalScore();
         SaveLoad.Instance.Save(new SaveLoad.Data(name, score));
+
+        Manager.Menu();
     }
 }

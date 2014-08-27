@@ -5,15 +5,19 @@ A 2D brick game using Unity for self study.
 
 # To-do
 
-- more animations: ball, scene transition, etc.
+- implement an audio manager.
+- background music.
+- partical effects.
 - add touch input support.
-- organise the project and deploy.
+- deploy and add advertisement.
 
 # Log
 
 ## 8/27 P.M.
 - add custom fonts.
 - optimize paddle collider shape.
+- adding ui audio effects.
+- reorganise the project.
 
 ## 8/26 P.M.
 - add music and fx.
