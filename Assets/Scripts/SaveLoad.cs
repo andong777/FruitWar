@@ -32,6 +32,8 @@ public class SaveLoad {
 
     public void Save(Data data)
     {
+        if (data.score <= 0)    // invalid record
+            return;
         string oldName = data.name;
         int oldScore = data.score;
         Debug.Log("Save: " + oldName + " " + oldScore);
@@ -52,6 +54,18 @@ public class SaveLoad {
 
         PlayerPrefs.SetString(i + "Name", oldName);
         PlayerPrefs.SetInt(i + "Score", oldScore);
+    }
+
+    public int HighScore()
+    {
+        if (PlayerPrefs.HasKey("1Name"))
+        {
+            return PlayerPrefs.GetInt("1Score");
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     public Data[] Prev()

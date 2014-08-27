@@ -9,7 +9,8 @@ public class DrunkBall : MonoBehaviour {
     {
         if (other.gameObject.tag == "Pad")
         {
-            Debug.Log("get drunkball");            
+            Debug.Log("get drunkball");
+            GameUIHelper.Instance.DrawProperty(GetComponent<SpriteRenderer>().sprite);
             GameObject.Find("Ball").SendMessage("MakeDrunkBall", time);
         }
     }

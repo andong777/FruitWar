@@ -11,6 +11,7 @@ public class DetectFall : MonoBehaviour {
 		if (other.gameObject.tag == "Ball") {
 			// if it is bottom wall, execute code, else let ConvertBall takes effect
 			if (bottom) {
+                audio.Play();
 				Manager.LoseLife();	// subtract one life of the player
                 SetGame.Instance.SetPadAndBall();   // reset position, zero speed
 			}			

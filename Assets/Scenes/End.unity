@@ -168,6 +168,7 @@ GameObject:
   - 4: {fileID: 512044074}
   - 212: {fileID: 512044073}
   - 114: {fileID: 512044072}
+  - 82: {fileID: 512044075}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -220,6 +221,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!82 &512044075
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512044071}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 291f63c3990cc754ebc1eb18c55940b0, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1053416386
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,10 +456,10 @@ RectTransform:
   - {fileID: 2033647031}
   m_Father: {fileID: 1053416387}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -78.1000061, y: 10}
-  m_SizeDelta: {x: -405.200012, y: 100}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -78.6000061, y: 10}
+  m_SizeDelta: {x: 243.799988, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1232243117
 GameObject:
@@ -539,9 +598,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1053416387}
   m_RootOrder: 1
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -260.700012, y: -105}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 63.2999878, y: 30}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1516344105
@@ -598,7 +657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Mat: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: .588}
-  m_Sprite: {fileID: 21300000, guid: b417bb52bbe39af4684ec5e56ded3d90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c98f8ac8ee2100468dde2f71cf15ac0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -623,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58343758e772fd4fb742e254e0813f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 0}
+  input: {fileID: 2033647030}
 --- !u!1 &1820957856
 GameObject:
   m_ObjectHideFlags: 0

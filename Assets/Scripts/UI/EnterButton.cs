@@ -18,6 +18,7 @@ public class EnterButton : MonoBehaviour {
         string name = input.text;
         if (!hasInput || name == null || name == "")
             name = "幽灵";
+        Debug.Log(name);
         int score = Manager.GetTotalScore();
         SaveLoad.Instance.Save(new SaveLoad.Data(name, score));
     }

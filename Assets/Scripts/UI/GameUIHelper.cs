@@ -12,6 +12,8 @@ public class GameUIHelper : MonoBehaviour {
     public Text heartText;
     public Text bulletText;
 
+    public Image propertyImage;
+
     private GameUIHelper() {}
 
     public static GameUIHelper Instance
@@ -57,5 +59,21 @@ public class GameUIHelper : MonoBehaviour {
     public void DrawBullet(int bulletNum)
     {
         bulletText.text = "" + bulletNum;
+    }
+
+    public void DrawProperty(Sprite sprite)
+    {
+        if (sprite == null)
+        {
+            propertyImage.enabled = false;
+        }
+        else
+        {
+            propertyImage.enabled = true;
+            var rt = propertyImage.GetComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(sprite.bounds.size.x, sprite.bounds.size.y);
+            propertyImage.sprite = sprite;
+            
+        }
     }
 }

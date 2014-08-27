@@ -21,6 +21,7 @@ public class BallFly : MonoBehaviour {
 	float propertyProbability = 0.2f;
 
     public GameObject star;
+    public AudioClip winAudio;
 	
 	// properties
 	public GameObject[] properties;
@@ -101,6 +102,8 @@ public class BallFly : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if (other.gameObject.tag == "Brick") {
+            if(Manager.Released)
+                audio.Play();
 			// drop brick
 			other.rigidbody.isKinematic = false;	// let it fall
 			other.collider.isTrigger = true;	// let it be transparent
@@ -175,12 +178,30 @@ public class BallFly : MonoBehaviour {
 	void MakeFireBall (float time){
 		collider2D.isTrigger = true;
 		ConvertBall.work = true;
+        StartCoroutine("FireBallCoroutine");
 		Invoke ("LoseFireBall", time);
 	}
+
+    IEnumerator FireBallCoroutine()
+    {
+        var sr = GetComponent<SpriteRenderer>();
+        Color color1 = sr.color;
+        Color color2 = new Color(color1.r, color1.g, color1.b, 0);
+        while (true)
+        {
+            sr.color = color1;
+            yield return new WaitForSeconds(0.5f);
+            sr.color = color2;
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
 	
 	void LoseFireBall (){
+        GameUIHelper.Instance.DrawProperty(null);
 		collider2D.isTrigger = false;
 		ConvertBall.work = false;
+        StopCoroutine("FireBallCoroutine");
+
 	}
 
     void MakeDrunkBall(float time)
@@ -191,12 +212,15 @@ public class BallFly : MonoBehaviour {
 
     void LoseDrunkBall()
     {
+        GameUIHelper.Instance.DrawProperty(null);
         drunk = false;
     }
 
     void DropStar()
     {
-        Instantiate(star, new Vector3(0, 2, 0), Quaternion.identity);
+        Vector2 position = new Vector3(0, 2, 0);
+        AudioSource.PlayClipAtPoint(winAudio, position);
+        Instantiate(star, position, Quaternion.identity);
     }
 
     void Reset()

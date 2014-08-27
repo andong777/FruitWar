@@ -37,10 +37,13 @@ public class MovePad : MonoBehaviour {
 		// if it is a property, eat it
 		if(other.gameObject.tag == "Property"){
 			Debug.Log("pad gets a property");
+            if(other.audio!=null)
+                other.audio.Play();
 			Destroy (other.gameObject, 0.5f);
 		}
 		// if it is a brick, do KillBrick
 		else if(other.gameObject.tag == "FallBrick"){
+            other.audio.Play();
 			Destroy(other.gameObject);
 			Manager.KillBrick();
 		}

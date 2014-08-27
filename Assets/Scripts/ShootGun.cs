@@ -17,6 +17,7 @@ public class ShootGun : MonoBehaviour {
 	void Update () {
 		if(Input.GetButtonUp("Fire1") && bulletNum > 0 && Manager.Released){
 			Debug.Log("shoot the gun");
+            audio.Play();
 			Vector3 position = transform.position + new Vector3(0, gameObject.collider2D.bounds.size.y * 2, 0);
 			var aBullet = Instantiate(bullet, position, Quaternion.identity) as GameObject;
 			aBullet.rigidbody2D.velocity = new Vector2(0, speed);

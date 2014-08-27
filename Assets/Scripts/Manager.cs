@@ -144,4 +144,9 @@ public class Manager {
         Application.LoadLevel("Help");
     }
 
+    public static void Menu()
+    {
+        Application.LoadLevel("Menu");
+    }
+
 }

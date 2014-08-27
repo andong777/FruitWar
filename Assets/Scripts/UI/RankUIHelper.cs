@@ -25,15 +25,11 @@ public class RankUIHelper : MonoBehaviour {
         var nameBuilder = new System.Text.StringBuilder();
         var scoreBuilder = new System.Text.StringBuilder();
 
-        noBuilder.Append("<b>No.</b>");
-        nameBuilder.Append("<b>玩家</b>");
-        scoreBuilder.Append("<b>得分</b>");
-
         for (int i = 0; i < data.Length && data[i].score > 0; i++)
         {              
-            noBuilder.Append("\n" + data[i].no);
-            nameBuilder.Append("\n" + data[i].name);
-            scoreBuilder.Append("\n" + data[i].score);
+            noBuilder.Append(data[i].no + "\n");
+            nameBuilder.Append(data[i].name + "\n");
+            scoreBuilder.Append(data[i].score + "\n");
         }
 
         noText.text = noBuilder.ToString();
