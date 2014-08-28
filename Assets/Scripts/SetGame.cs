@@ -54,10 +54,10 @@ public class SetGame: MonoBehaviour {
         topPos = mainCam.ScreenToWorldPoint(new Vector3(0, Screen.height, 0)).y;
         bottomPos = mainCam.ScreenToWorldPoint(new Vector3(0, 0, 0)).y;
 		
-		// set walls
-		leftWall.position = new Vector3(leftPos - leftWall.collider2D.bounds.size.x / 2, 0, 0);
-		rightWall.position = new Vector3(rightPos + rightWall.collider2D.bounds.size.x / 2, 0, 0);
-		topWall.position = new Vector3(0, topPos + topWall.collider2D.bounds.size.y / 2, 0);
+		// set walls, all leave some spaces, the bottom one can have more
+		leftWall.position = new Vector3(leftPos - leftWall.collider2D.bounds.size.x, 0, 0);
+		rightWall.position = new Vector3(rightPos + rightWall.collider2D.bounds.size.x, 0, 0);
+		topWall.position = new Vector3(0, topPos + topWall.collider2D.bounds.size.y, 0);
 		bottomWall.position = new Vector3(0, bottomPos - bottomWall.collider2D.bounds.size.y - pad.collider2D.bounds.size.y, 0);      // leave space
 
         bricks = new List<GameObject>();
@@ -85,6 +85,7 @@ public class SetGame: MonoBehaviour {
         GameUIHelper.Instance.DrawLife(Manager.GetLifeNum());
         GameUIHelper.Instance.DrawScore(0);
         GameUIHelper.Instance.DrawTargetScore(Manager.GetTargetScore());
+
     }
 
 	public void SetPadAndBall() {
@@ -110,10 +111,10 @@ public class SetGame: MonoBehaviour {
         float brickHeight = brickSprites[0].bounds.size.y * 1.1f;
 
 		// set block to spawn bricks
-		float distX = 0;
+		float distX = brickWidth / 4;
 		float distY = (topPos - bottomPos) * 3 / 7;
         float width = rightPos - leftPos - 2 * distX;
-		float height = distY * 2;
+		float height = (topPos - bottomPos) * 4 / 7;
 	
 		// array to mark if a place is occupied
 		int rowNum = (int)(width / brickWidth);
@@ -148,4 +149,5 @@ public class SetGame: MonoBehaviour {
 		
 		Manager.SetTargetScoreByBrick(brickCount);	// set target score according to bricks
 	}
+
 }

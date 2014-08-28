@@ -22,6 +22,7 @@ public class ShootGun : MonoBehaviour {
 			var aBullet = Instantiate(bullet, position, Quaternion.identity) as GameObject;
 			aBullet.rigidbody2D.velocity = new Vector2(0, speed);
 			bulletNum --;
+            Destroy(aBullet, 3f);   // destroy it after seconds
             // update UI
             GameUIHelper.Instance.DrawBullet(bulletNum);
 		}

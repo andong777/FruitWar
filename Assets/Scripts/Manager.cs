@@ -47,26 +47,37 @@ public class Manager {
     }
 
 	public static void AddScoreByBrick(int brickNum) {
-		stageScore += brickNum * scorePerBrick;
-        GameUIHelper.Instance.DrawScore(stageScore);
+		stageScore += brickNum * 1000;
 		if (stageScore >= targetScore && !won) {
             won = true;
             GameObject.Find("Ball").SendMessage("DropStar");
 		}
+        try
+        {
+            GameUIHelper.Instance.DrawScore(stageScore);
+        }catch(System.Exception){ }
 	}
 
 	public static void LoseLife() {
 		lifeNum -= 1;
-        GameUIHelper.Instance.DrawLife(lifeNum);
 		// if no life remaining, show game over
 		if (lifeNum == 0) {
             End();
 		}
+        try
+        {
+            GameUIHelper.Instance.DrawLife(lifeNum);
+        }
+        catch (System.Exception) { }
 	}
 	
 	public static void GainLife() {
 		lifeNum += 1;
-        GameUIHelper.Instance.DrawLife(lifeNum);
+        try
+        {
+            GameUIHelper.Instance.DrawLife(lifeNum);
+        }
+        catch (System.Exception) { }
 	}
 
     public static int GetLifeNum()
@@ -89,8 +100,12 @@ public class Manager {
 	
 	public static void SetTargetScoreByBrick(int value) {
 		brickNum = value;
-		targetScore = brickNum * 2 / 3 * scorePerBrick;
-        GameUIHelper.Instance.DrawTargetScore(targetScore);
+		targetScore = brickNum * 3 / 5 * scorePerBrick;
+        try
+        {
+            GameUIHelper.Instance.DrawTargetScore(targetScore);
+        }
+        catch (System.Exception) { }
 	}
 
     public static int GetTotalScore()
@@ -111,20 +126,20 @@ public class Manager {
 		released = false;
         won = false;
         var setGame = SetGame.Instance;
-        if (setGame != null)
+        if(setGame!=null)
             setGame.Reset();
+
 	}
 
     public static void NextStage()
-    {        
-        // reset scene variables
-        ResetStage();
-        // set game
-        SetGame.Instance.Reset();
+    {
+        Application.LoadLevel("Game");
         // stage num plus 1
         stage += 1;
         // award one life
         GainLife();
+        // reset scene variables
+        ResetStage();
         
     }
 
@@ -132,7 +147,6 @@ public class Manager {
     {
         // add stage score to total score
         totalScore += stageScore;
-
         Application.LoadLevel("Break");
     }
 

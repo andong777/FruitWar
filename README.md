@@ -20,6 +20,9 @@ A 2D brick game using Unity for self study.
 	1. respawning bricks doesn't remove old bricks.
 	2. fireball fx doesn't work.
 	3. clicking reset button triggers ball shoot.
+	4. spawning bricks out of screen.
+	5. next button doesn't work.
+	6. switching stage bugs.
 
 ## 8/28 A.M.
 - add more partical effects.
