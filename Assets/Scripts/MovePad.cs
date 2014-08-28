@@ -13,8 +13,12 @@ public class MovePad : MonoBehaviour {
 
 	void Update () {
 		// Move the pad horizontally.
+#if UNITY_STANDALONE_WIN
 		float input = Input.GetAxis ("Horizontal");
-		Vector3 offset = new Vector3(speed * input, 0, 0);		
+#else
+        float input = Input.acceleration.x;
+#endif
+        Vector3 offset = new Vector3(speed * input, 0, 0);		
 		rigidbody2D.velocity = offset;
 		
 		// if the ball unreleased, move it also
@@ -39,7 +43,7 @@ public class MovePad : MonoBehaviour {
 			Debug.Log("pad gets a property");
             if(other.audio!=null)
                 other.audio.Play();
-			Destroy (other.gameObject, 0.5f);
+            // let bottom wall recycle it
 		}
 		// if it is a brick, do KillBrick
 		else if(other.gameObject.tag == "FallBrick"){

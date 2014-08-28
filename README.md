@@ -16,10 +16,13 @@ A 2D brick game using Unity for self study.
 - redesign audio management.
 - complete help scene.
 - add support for different resolutions.
+- fix bugs: 
+	1. respawning bricks doesn't remove old bricks.
+	2. fireball fx doesn't work.
+	3. clicking reset button triggers ball shoot.
 
 ## 8/28 A.M.
 - add more partical effects.
-
 
 ## 8/27 P.M.
 - add custom fonts.

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpeedUp : MonoBehaviour {
 
-	float ratio = 1.5f;
+	float ratio = 1.2f;
 	
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Pad"){

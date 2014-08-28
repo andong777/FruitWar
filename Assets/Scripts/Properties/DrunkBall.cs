@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DrunkBall : MonoBehaviour {
 
-    private float time = 5f;
+    private float time = 10f;
 
     void OnTriggerEnter2D(Collider2D other)
     {

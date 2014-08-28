@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BallFly : MonoBehaviour {
 	
-	private const float normalSpeed = 6f;
+	private const float normalSpeed = 5f;
 	
 	// if speed smaller or greater than speed threshold, set the speed to value
 	private float speedMinThreshold;
@@ -26,16 +26,19 @@ public class BallFly : MonoBehaviour {
 	// properties
 	public GameObject[] properties;
 
+    // in case the ball is shot when user clicks reset
+    float startTime;
+
     bool drunk;
 	
 	void Start () {
-		SetVariables ();
-		Random.seed = System.DateTime.Now.Millisecond;
+        Reset();
+        Random.seed = (int)startTime;
 	}
 	
 	void Update () {
 		// Control the ball.
-		if (Input.GetButtonUp ("Fire1") && !Manager.Released) {
+		if (Input.GetButtonUp ("Fire1") && !Manager.Released && Time.time > startTime + 0.5) {
 			Debug.Log("Fire");
 			// choose a random direction		
 			float dirX = Random.Range(-0.8f, 0.8f);
@@ -201,7 +204,7 @@ public class BallFly : MonoBehaviour {
 		collider2D.isTrigger = false;
 		ConvertBall.work = false;
         StopCoroutine("FireBallCoroutine");
-
+        GetComponent<SpriteRenderer>().color = Color.white;
 	}
 
     void MakeDrunkBall(float time)
@@ -231,6 +234,8 @@ public class BallFly : MonoBehaviour {
         LoseDrunkBall();
         // reset speed
         SetVariables();
+        // set start time to now
+        startTime = Time.time;
     }
 
 }

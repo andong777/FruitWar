@@ -22,7 +22,7 @@ public class DetectFall : MonoBehaviour {
 			if(other.gameObject.tag == "FallBrick"){
 				Manager.LoseBrick();	// to help game manager count brick number
 			}
-			Destroy(other.gameObject);
+			Destroy(other.gameObject, 0.5f);
 		}
 	}
 }

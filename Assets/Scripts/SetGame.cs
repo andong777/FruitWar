@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SetGame: MonoBehaviour {
 
@@ -25,6 +26,7 @@ public class SetGame: MonoBehaviour {
 	public GameObject brick;
 	float spacePercentage = 0.2f;	// how many left blank
     public Sprite[] brickSprites;
+    List<GameObject> bricks = null; // used to recycle garbage
 
     private SetGame() {}
 
@@ -58,6 +60,7 @@ public class SetGame: MonoBehaviour {
 		topWall.position = new Vector3(0, topPos + topWall.collider2D.bounds.size.y / 2, 0);
 		bottomWall.position = new Vector3(0, bottomPos - bottomWall.collider2D.bounds.size.y - pad.collider2D.bounds.size.y, 0);      // leave space
 
+        bricks = new List<GameObject>();
         Reset();    // reset pad, ball and bricks
 	}
 
@@ -65,6 +68,15 @@ public class SetGame: MonoBehaviour {
     {
         // set the pad and the ball
         SetPadAndBall();
+
+        // before spawn new bricks, remove old bricks and collect garbage
+        foreach (var b in bricks)
+        {
+            Destroy(b);
+        }
+        bricks.Clear();
+        System.GC.Collect();    // the best time to do GC
+
         // spawn bricks randomly.
         SpawnBricks();
 
@@ -129,6 +141,7 @@ public class SetGame: MonoBehaviour {
                 float y = bottomPos + distY + brickHeight * (col + 0.5f);
                 var theBrick = Instantiate(brick, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
                 int index = Random.Range(0, brickSprites.Length);
+                bricks.Add(theBrick);   // add it to general management
                 theBrick.GetComponent<SpriteRenderer>().sprite = brickSprites[index];
             }
         }

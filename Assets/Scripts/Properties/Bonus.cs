@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bonus : MonoBehaviour {
 
-	private int bonusByBrick = 5;
+	private int bonusByBrick = 8;
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.tag == "Pad"){

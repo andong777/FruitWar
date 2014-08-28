@@ -18,7 +18,7 @@ public class ChooseSprite : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().sprite = sprites[index];
         }
-        catch (System.Exception e)
+        catch (System.Exception)
         {
             GetComponent<UnityEngine.UI.Image>().sprite = sprites[index];
         }
