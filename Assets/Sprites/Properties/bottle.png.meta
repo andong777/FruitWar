@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: cf293ddb23d8f684995ac17a010f41b0
+guid: 5eb69836f46a07242ac6d0c53e8d7d16
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Skull
-    21300002: skull
+    21300000: Bottle-Blue-Elixir
+    21300002: bottle
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

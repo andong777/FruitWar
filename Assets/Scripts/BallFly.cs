@@ -18,7 +18,7 @@ public class BallFly : MonoBehaviour {
 	private const float resetTime = 3f;
 	
 	// the probability of generating property
-	float propertyProbability = 0.2f;
+	public float propertyProbability = 0.3f;
 
     public GameObject star;
     public AudioClip winAudio;

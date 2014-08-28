@@ -8,6 +8,7 @@ public class SaveLoad {
 
     const int start = 1;
     const int recordsPerPage = 5;
+    const int maxRecords = 30;
     int cursor; // cursor to read records
 
     private SaveLoad() {
@@ -38,8 +39,9 @@ public class SaveLoad {
         int oldScore = data.score;
         Debug.Log("Save: " + oldName + " " + oldScore);
         int i = start;
-        while (PlayerPrefs.HasKey(i + "Name"))
+        while (i <= maxRecords && PlayerPrefs.HasKey(i + "Name"))
         {
+            
             int score = PlayerPrefs.GetInt(i + "Score");
             if (oldScore > score)
             {

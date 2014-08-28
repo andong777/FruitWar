@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: cf293ddb23d8f684995ac17a010f41b0
+guid: b1c5f9def8c1e3040abd65ba8731bd90
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Skull
-    21300002: skull
+    21300000: hint3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -27,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -39,7 +38,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []

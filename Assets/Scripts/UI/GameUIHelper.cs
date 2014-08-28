@@ -13,6 +13,7 @@ public class GameUIHelper : MonoBehaviour {
     public Text bulletText;
 
     public Image propertyImage;
+    float propertyImageSize = 50f;
 
     private GameUIHelper() {}
 
@@ -25,16 +26,6 @@ public class GameUIHelper : MonoBehaviour {
     {
         _instance = this;
     }
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     public void DrawLife(int lifeNum)
     {
@@ -63,17 +54,21 @@ public class GameUIHelper : MonoBehaviour {
 
     public void DrawProperty(Sprite sprite)
     {
+        var rt = propertyImage.rectTransform;
         if (sprite == null)
         {
+            Debug.Log("clean property");
+            rt.sizeDelta = new Vector2(propertyImageSize, propertyImageSize);
             propertyImage.enabled = false;
         }
         else
         {
+            Debug.Log("draw property");
             propertyImage.enabled = true;
-            var rt = propertyImage.GetComponent<RectTransform>();
-            rt.sizeDelta = new Vector2(sprite.bounds.size.x, sprite.bounds.size.y);
+            rt.sizeDelta = new Vector2(rt.sizeDelta.y * sprite.bounds.size.x / sprite.bounds.size.y, rt.sizeDelta.y);
             propertyImage.sprite = sprite;
             
         }
+
     }
 }

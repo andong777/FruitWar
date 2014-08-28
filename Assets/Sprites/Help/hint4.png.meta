@@ -1,10 +1,8 @@
 fileFormatVersion: 2
-guid: 2cce43916fecc8945b891d3e0194ed5d
+guid: 8b609fe02f5faa24eac324c85cf85d84
 TextureImporter:
   fileIDToRecycleName:
-    21300000: barrel-h
-    21300002: gun
-    21300004: barrel
+    21300000: hint4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -28,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -40,7 +38,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []

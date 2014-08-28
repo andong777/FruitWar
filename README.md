@@ -5,13 +5,21 @@ A 2D brick game using Unity for self study.
 
 # To-do
 
-- implement an audio manager.
-- background music.
-- partical effects.
 - add touch input support.
 - deploy and add advertisement.
 
 # Log
+
+## 8/28 P.M.
+- design title and logo.
+- add help pictures.
+- redesign audio management.
+- complete help scene.
+- add support for different resolutions.
+
+## 8/28 A.M.
+- add more partical effects.
+
 
 ## 8/27 P.M.
 - add custom fonts.
@@ -65,3 +73,6 @@ A 2D brick game using Unity for self study.
 - Improve brick generating method.
 - Make target score change as brick number change.
 - Add target score display.
+
+## 8/15 P.M.
+- project begins here.

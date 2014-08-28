@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 3281a6867d4070e468bf2684a2dd3e93
+guid: f09bcf565992ad4448483b5858bc7175
 TextureImporter:
   fileIDToRecycleName:
-    21300000: potion
+    21300000: Gun
+    21300002: gun
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +27,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

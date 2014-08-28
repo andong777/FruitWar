@@ -56,7 +56,7 @@ public class SetGame: MonoBehaviour {
 		leftWall.position = new Vector3(leftPos - leftWall.collider2D.bounds.size.x / 2, 0, 0);
 		rightWall.position = new Vector3(rightPos + rightWall.collider2D.bounds.size.x / 2, 0, 0);
 		topWall.position = new Vector3(0, topPos + topWall.collider2D.bounds.size.y / 2, 0);
-		bottomWall.position = new Vector3(0, bottomPos - pad.collider2D.bounds.size.y / 2, 0);      // leave space
+		bottomWall.position = new Vector3(0, bottomPos - bottomWall.collider2D.bounds.size.y - pad.collider2D.bounds.size.y, 0);      // leave space
 
         Reset();    // reset pad, ball and bricks
 	}
@@ -77,7 +77,7 @@ public class SetGame: MonoBehaviour {
 
 	public void SetPadAndBall() {
 		// set pad position
-		pad.position = new Vector3(0, bottomPos + pad.collider2D.bounds.size.y / 2, 0);
+		pad.position = new Vector3(0, bottomPos + pad.collider2D.bounds.size.y / 3, 0);
 		// set ball position
 		ball.position = pad.position + new Vector3(0, ball.gameObject.collider2D.bounds.size.y / 2, 0);
 		
@@ -94,12 +94,12 @@ public class SetGame: MonoBehaviour {
 	
 	public void SpawnBricks () {
 		// get brick info. add a little distance between them
-        float brickWidth = brickSprites[0].bounds.size.x * 1.1f;
+        float brickWidth = brickSprites[0].bounds.size.x * 1f;
         float brickHeight = brickSprites[0].bounds.size.y * 1.1f;
 
 		// set block to spawn bricks
-		float distX = brickWidth;
-		float distY = (topPos - bottomPos) * 2 / 5;
+		float distX = 0;
+		float distY = (topPos - bottomPos) * 3 / 7;
         float width = rightPos - leftPos - 2 * distX;
 		float height = distY * 2;
 	
