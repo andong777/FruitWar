@@ -114,7 +114,7 @@ public class SetGame: MonoBehaviour {
 		float distX = brickWidth / 4;
 		float distY = (topPos - bottomPos) * 3 / 7;
         float width = rightPos - leftPos - 2 * distX;
-		float height = (topPos - bottomPos) * 4 / 7;
+		float height = (topPos - bottomPos) / 2;
 	
 		// array to mark if a place is occupied
 		int rowNum = (int)(width / brickWidth);

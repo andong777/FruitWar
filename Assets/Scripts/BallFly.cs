@@ -38,7 +38,8 @@ public class BallFly : MonoBehaviour {
 	
 	void Update () {
 		// Control the ball.
-		if (Input.GetButtonUp ("Fire1") && !Manager.Released && Time.time > startTime + 0.5) {
+		if (Input.GetButtonUp ("Fire1") && !Manager.Released 
+                && Time.timeScale > 0f && Time.time > startTime + 0.5) {
 			Debug.Log("Fire");
 			// choose a random direction		
 			float dirX = Random.Range(-0.8f, 0.8f);
@@ -233,7 +234,11 @@ public class BallFly : MonoBehaviour {
         // disable drunkball
         LoseDrunkBall();
         // reset speed
-        SetVariables();
+        SetVariables();        
+    }
+
+    void SetStartTime()
+    {
         // set start time to now
         startTime = Time.time;
     }

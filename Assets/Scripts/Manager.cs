@@ -16,6 +16,7 @@ public class Manager {
 	private static int stageScore = 0;  // score earned
 	private static int brickNum;    // how many bricks there
 	private static bool released = false;   // ball state
+    private static bool paused = false; // game state
     private static bool won = false;    // mark if player has won, 
                                         // used to handle logic and generate star
 	
@@ -23,6 +24,15 @@ public class Manager {
 		get{ return released;}
 		set{ released = value;}
 	}
+
+    public static void Pause()
+    {
+        if (paused)
+            Time.timeScale = 1f;
+        else
+            Time.timeScale = 0f;
+        paused = !paused;
+    }
 
 	public static void KillBrick(){
 		// the order is important: check score first, then check brick num
@@ -122,13 +132,16 @@ public class Manager {
     }
 
 	public static void ResetStage () {
-		stageScore = 0;
-		released = false;
-        won = false;
+		stageScore = 0; // clear stage score
+		released = false;   // catch ball
+        won = false;    // haven't won
+        // reset time
+        Time.timeScale = 1f;
+        paused = false;
+        // reset game
         var setGame = SetGame.Instance;
         if(setGame!=null)
             setGame.Reset();
-
 	}
 
     public static void NextStage()
