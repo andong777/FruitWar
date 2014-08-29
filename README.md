@@ -7,6 +7,11 @@ A 2D brick game using Unity for self study.
 
 - add touch input support.
 - deploy and add advertisement.
+- fix rank scene bug:
+	1. need to click prev button to show result.
+	2. sorting issue.
+- add shoot direction rotating functionality, to let player control shoot direction.
+
 
 # Log
 
