@@ -500,7 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 21300000, guid: 8ecbd6c0a256bea4d8ad3f468e3f652d, type: 3}
-  - {fileID: 21300000, guid: ed7fcbb5d741f584f8a8b86eeed85c42, type: 3}
+  - {fileID: 21300000, guid: 48e4ba23068bab544bc0c737986ca1ec, type: 3}
   - {fileID: 21300000, guid: b1c5f9def8c1e3040abd65ba8731bd90, type: 3}
   - {fileID: 21300000, guid: 8b609fe02f5faa24eac324c85cf85d84, type: 3}
   gallery: {fileID: 1700487537}

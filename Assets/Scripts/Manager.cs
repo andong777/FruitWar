@@ -47,7 +47,7 @@ public class Manager {
     }
 
 	public static void AddScoreByBrick(int brickNum) {
-		stageScore += brickNum * 1000;
+		stageScore += brickNum * scorePerBrick;
 		if (stageScore >= targetScore && !won) {
             won = true;
             GameObject.Find("Ball").SendMessage("DropStar");

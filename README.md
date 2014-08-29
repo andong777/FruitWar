@@ -10,6 +10,10 @@ A 2D brick game using Unity for self study.
 
 # Log
 
+## 8/29 A.M.
+- fix name input bugs.
+- release 1.0 version.
+
 ## 8/28 P.M.
 - design title and logo.
 - add help pictures.

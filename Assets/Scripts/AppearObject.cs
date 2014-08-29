@@ -15,7 +15,7 @@ public class AppearObject : MonoBehaviour {
     {
         rectTransform = GetComponent<RectTransform>();
         destPos = rectTransform.position.x;
-        var canvas = GameObject.Find("BreakDialog").GetComponent<RectTransform>();
+        var canvas = GameObject.Find("Canvas").GetComponent<RectTransform>();
         beginPos = canvas.position.x;
         if (fromLeft)
             beginPos -= canvas.rect.width / 2 + rectTransform.rect.width;

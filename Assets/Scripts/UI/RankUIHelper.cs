@@ -26,7 +26,7 @@ public class RankUIHelper : MonoBehaviour {
         var scoreBuilder = new System.Text.StringBuilder();
 
         for (int i = 0; i < data.Length && data[i].score > 0; i++)
-        {              
+        {
             noBuilder.Append(data[i].no + "\n");
             nameBuilder.Append(data[i].name + "\n");
             scoreBuilder.Append(data[i].score + "\n");

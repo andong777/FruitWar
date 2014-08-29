@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MovePad : MonoBehaviour {
 
-	public float speed = 20f;
+	public float speed = 10f;
 
 	private Transform ball = null;
 
@@ -12,14 +12,16 @@ public class MovePad : MonoBehaviour {
 	}
 
 	void Update () {
-		// Move the pad horizontally.
-#if UNITY_STANDALONE_WIN
-		float input = Input.GetAxis ("Horizontal");
-#else
+        // Move the pad horizontally.
+#if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_METRO
+        float input = Input.GetAxis ("Horizontal");
+#elif UNITY_ANDROID || UNITY_IPHONE || UNITY_WP8
         float input = Input.acceleration.x;
+#else
+        float input = 0f;   // not supported yet
 #endif
-        Vector3 offset = new Vector3(speed * input, 0, 0);		
-		rigidbody2D.velocity = offset;
+        Vector3 offset = new Vector3(speed * input, 0, 0);
+        rigidbody2D.velocity = offset;
 		
 		// if the ball unreleased, move it also
 		if(!Manager.Released) {
