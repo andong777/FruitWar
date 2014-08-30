@@ -1,14 +1,17 @@
-2DBrick
+Fruit War (水果大作战)
 =======
 
-A 2D brick game using Unity for self study.
+# Introduction
 
-# To-do
+A cartoon-style 2D breakout game using Unity and its native 2D technology. 
+Built with Unity 4.6 Beta on Windows 7 64-bit.
+
+# To-dos
 
 - deploy and add advertisement.
 - complete introduction of properties.
 
-# Log
+# Release Notes
 
 ## 8/30 P.M.
 - add shoot direction rotating functionality, to let player control shoot direction.
