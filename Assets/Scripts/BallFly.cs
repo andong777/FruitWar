@@ -15,6 +15,7 @@ public class BallFly : MonoBehaviour {
 	float multifyValue;
 
     Quaternion shootDirection;
+    float rotateSpeed = 50f;
 	
 	// speed will return to normal after resetTime
 	private const float resetTime = 3f;
@@ -40,14 +41,20 @@ public class BallFly : MonoBehaviour {
 	
 	void Update () {
 		// Control the ball.
-		if (Input.GetButtonUp ("Fire1") && !Manager.Released 
+#if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_METRO
+        bool fire = Input.GetButtonUp("Fire1");
+#elif UNITY_ANDROID || UNITY_IPHONE || UNITY_WP8
+        bool fire = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended;
+#else
+        bool fire = false;
+#endif
+		if (fire && !Manager.Released 
                 && Time.timeScale > 0f && Time.time > startTime + 0.5) {
 			Debug.Log("Fire");
-			// choose a random direction		
-			float dirX = Random.Range(-0.8f, 0.8f);
-			float dirY = Mathf.Sqrt(1 - dirX * dirX);
-			Vector2 direct = new Vector2(dirX, dirY);
 
+            // shoot the ball at the direction
+            float angle = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
+            var direct = new Vector2(- Mathf.Sin(angle), - Mathf.Cos(angle));
 			rigidbody2D.velocity = direct * normalSpeed;
 			
 			// mark as released
@@ -56,7 +63,7 @@ public class BallFly : MonoBehaviour {
         // rotating the ball
         if(!Manager.Released)
         {
-            transform.RotateAround(Vector3.zero, Vector3.forward, 30 * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, 0, Mathf.PingPong(Time.time * rotateSpeed, 120) - 60);
         }
 	}
 	

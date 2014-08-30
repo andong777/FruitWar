@@ -6,10 +6,13 @@ A 2D brick game using Unity for self study.
 # To-do
 
 - deploy and add advertisement.
-- add shoot direction rotating functionality, to let player control shoot direction.
-
+- complete introduction of properties.
 
 # Log
+
+## 8/30 P.M.
+- add shoot direction rotating functionality, to let player control shoot direction.
+- release version 1.2.
 
 ## 8/30 A.M.
 - prev and next buttons can hide when no more content.
@@ -19,12 +22,13 @@ A 2D brick game using Unity for self study.
 - fix rank scene bug: need to click prev button to show result.
 - modify several properties to make them easier to distinguish and catch.
 
-## 8/29 A.M.
-- fix name input bugs.
-- release 1.0 version.
-
 ## 8/29 P.M.
 - add pause button.
+- release version 1.1.
+
+## 8/29 A.M.
+- fix name input bugs.
+- release version 1.0.
 
 ## 8/28 P.M.
 - design title and logo.
