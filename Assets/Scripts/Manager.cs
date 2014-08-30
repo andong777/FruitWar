@@ -165,6 +165,8 @@ public class Manager {
 
     public static void End()
     {
+        // should also add stage score to total score
+        totalScore += stageScore;
         Application.LoadLevel("End");
     }
 

@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 2bfab6f8e8f2f064987b14508bf05400
+guid: f52d7c4083dd38e45b8ded5586d52103
 TextureImporter:
   fileIDToRecycleName:
-    21300000: paddleBlu
-    21300002: paddle
+    21300000: paddleRed
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -27,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

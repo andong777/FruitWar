@@ -31,6 +31,11 @@ public class SaveLoad {
         }
     }
 
+    public void ResetCursor()
+    {
+        cursor = start;
+    }
+
     public void Save(Data data)
     {
         if (data.score <= 0)    // invalid record

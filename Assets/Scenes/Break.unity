@@ -811,7 +811,7 @@ GameObject:
   - 223: {fileID: 1700295644}
   - 114: {fileID: 1700295643}
   m_Layer: 5
-  m_Name: BreakDialog
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

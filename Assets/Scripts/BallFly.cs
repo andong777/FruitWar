@@ -3,22 +3,24 @@ using System.Collections;
 
 public class BallFly : MonoBehaviour {
 	
-	private const float normalSpeed = 5f;
+	const float normalSpeed = 5f;
 	
 	// if speed smaller or greater than speed threshold, set the speed to value
-	private float speedMinThreshold;
-	private float speedMinValue;
-	private float speedMaxThreshold;
-	private float speedMaxValue;
+	float speedMinThreshold;
+	float speedMinValue;
+	float speedMaxThreshold;
+	float speedMaxValue;
 	// if velocity angle smaller than angle threshold, add speed at y axis by value
-	private float angleThreshold;
-	private float multifyValue;
+	float angleThreshold;
+	float multifyValue;
+
+    Quaternion shootDirection;
 	
 	// speed will return to normal after resetTime
 	private const float resetTime = 3f;
 	
 	// the probability of generating property
-	public float propertyProbability = 0.3f;
+	float propertyProbability = 0.3f;
 
     public GameObject star;
     public AudioClip winAudio;
@@ -46,12 +48,16 @@ public class BallFly : MonoBehaviour {
 			float dirY = Mathf.Sqrt(1 - dirX * dirX);
 			Vector2 direct = new Vector2(dirX, dirY);
 
-            rigidbody2D.WakeUp();
 			rigidbody2D.velocity = direct * normalSpeed;
 			
 			// mark as released
 			Manager.Released = true;
-		}
+        }
+        // rotating the ball
+        if(!Manager.Released)
+        {
+            transform.RotateAround(Vector3.zero, Vector3.forward, 30 * Time.deltaTime);
+        }
 	}
 	
 	/* 	This method is to avoid the situations below:
@@ -153,7 +159,6 @@ public class BallFly : MonoBehaviour {
             Debug.Log("zero speed");
             rigidbody2D.velocity = Vector2.zero;    // zero ball speed
             rigidbody2D.angularVelocity = 0f;        // zero angular speed
-            rigidbody2D.Sleep();                    // make sure no move
         }
 		// recover thresholds and values
 		speedMinValue = normalSpeed - 1;
@@ -190,13 +195,13 @@ public class BallFly : MonoBehaviour {
     {
         var sr = GetComponent<SpriteRenderer>();
         Color color1 = sr.color;
-        Color color2 = new Color(color1.r, color1.g, color1.b, 0);
+        Color color2 = new Color(color1.r, color1.g, color1.b, 0.6f);
         while (true)
         {
             sr.color = color1;
-            yield return new WaitForSeconds(0.5f);
-            sr.color = color2;
             yield return new WaitForSeconds(0.3f);
+            sr.color = color2;
+            yield return new WaitForSeconds(0.1f);
         }
     }
 	

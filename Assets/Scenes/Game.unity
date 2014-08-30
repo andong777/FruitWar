@@ -780,7 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a8883bcbf72d0489f0faf771644d49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propertyProbability: .300000012
   star: {fileID: 100000, guid: 757118c55083d684d9173a5dadbe46b8, type: 2}
   winAudio: {fileID: 8300000, guid: 13c45c4aea5fb7f489d7fc4ba49b1382, type: 3}
   properties:

@@ -16,6 +16,7 @@ public class RankUIHelper : MonoBehaviour {
         prevButton.onClick.AddListener(HandlePrev);
         nextButton.onClick.AddListener(HandleNext);
 
+        SaveLoad.Instance.ResetCursor();
         HandleNext();
     }
 

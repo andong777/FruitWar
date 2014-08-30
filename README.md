@@ -5,19 +5,25 @@ A 2D brick game using Unity for self study.
 
 # To-do
 
-- add touch input support.
 - deploy and add advertisement.
-- fix rank scene bug:
-	1. need to click prev button to show result.
-	2. sorting issue.
 - add shoot direction rotating functionality, to let player control shoot direction.
 
 
 # Log
 
+## 8/30 A.M.
+- prev and next buttons can hide when no more content.
+- improve help scene UI design to better support different resolutions.
+- fix end scene's bug of treating place holder as player's name when player directly hits enter button.
+- now even if player doesn't complete a stage, the score earned in this stage can also be added up to total score.
+- fix rank scene bug: need to click prev button to show result.
+- modify several properties to make them easier to distinguish and catch.
+
 ## 8/29 A.M.
 - fix name input bugs.
 - release 1.0 version.
+
+## 8/29 P.M.
 - add pause button.
 
 ## 8/28 P.M.

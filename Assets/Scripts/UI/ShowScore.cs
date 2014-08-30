@@ -27,7 +27,7 @@ public class ShowScore : MonoBehaviour {
         Debug.Log(startScore + "->" + endScore);
         stop.onClick.AddListener(HandleStop);
 
-        StartCoroutine(Running());
+        StartCoroutine("Running");
 	}
 
     // let score run
@@ -43,7 +43,7 @@ public class ShowScore : MonoBehaviour {
 
     void HandleStop()
     {
-        StopCoroutine(Running());
+        StopCoroutine("Running");
         score.text = endScore + "";
     }
 
