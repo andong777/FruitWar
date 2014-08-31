@@ -41,7 +41,7 @@ public class MovePad : MonoBehaviour {
 	
 	void OnTriggerEnter2D (Collider2D other) {
 		// if it is a property, eat it
-		if(other.gameObject.tag == "Property"){
+		if(other.gameObject.tag == "Property" || other.gameObject.tag == "Star"){
 			Debug.Log("pad gets a property");
             if(other.audio!=null)
                 other.audio.Play();

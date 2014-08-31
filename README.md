@@ -13,9 +13,14 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 
 # Release Notes
 
+## 8/31 A.M.
+- add hint bar.
+- release version 1.3.
+
 ## 8/30 P.M.
 - add shoot direction rotating functionality, to let player control shoot direction.
 - release version 1.2.
+- fix bug of appearing white line between two pictures when scrolling background.
 
 ## 8/30 A.M.
 - prev and next buttons can hide when no more content.

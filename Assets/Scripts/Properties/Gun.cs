@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour {
 		if (other.gameObject.tag == "Pad"){
 
 			Debug.Log("get gun");
+            GameUIHelper.Instance.DrawHint("获得弹药");
 			other.SendMessage("LoadBullets");
 		}
 	}

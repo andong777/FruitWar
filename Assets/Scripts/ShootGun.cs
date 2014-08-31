@@ -10,9 +10,18 @@ public class ShootGun : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-	    
+        StartCoroutine("hintAtTheBeginning");
 	}
-	
+
+    IEnumerator hintAtTheBeginning()
+    {
+        yield return new WaitForSeconds(3f);
+        if (!Manager.Released)
+        {
+            GameUIHelper.Instance.DrawHint("寻找合适的角度，点击屏幕发射");
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetButtonDown("Fire1") && bulletNum > 0 && Manager.Released && Time.timeScale > 0f){

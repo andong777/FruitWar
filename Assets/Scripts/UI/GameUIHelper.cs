@@ -11,6 +11,9 @@ public class GameUIHelper : MonoBehaviour {
     public Text stageText;
     public Text heartText;
     public Text bulletText;
+    
+    public Text hintText;
+    float hintDisappearTime = 0f;
 
     public Image propertyImage;
     float propertyImageSize = 50f;
@@ -70,5 +73,19 @@ public class GameUIHelper : MonoBehaviour {
             
         }
 
+    }
+
+    void Update()
+    {
+        if (Time.frameCount % 50 == 0 && Time.time > hintDisappearTime)
+        {
+            hintText.text = "";
+        }
+    }
+
+    public void DrawHint(string hint)
+    {
+        hintDisappearTime = Time.time + 3f;
+        hintText.text = hint;
     }
 }

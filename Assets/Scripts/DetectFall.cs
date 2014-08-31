@@ -17,7 +17,11 @@ public class DetectFall : MonoBehaviour {
 			Debug.Log("catch something");
 			if(other.gameObject.tag == "FallBrick"){
 				Manager.LoseBrick();	// to help game manager count brick number
-			}
+            }
+            else if (other.gameObject.tag == "Star")
+            {
+                GameUIHelper.Instance.DrawHint("战斗到底");
+            }
 			Destroy(other.gameObject, 0.5f);
 		}
 	}

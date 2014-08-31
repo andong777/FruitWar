@@ -14,7 +14,6 @@ public class BallFly : MonoBehaviour {
 	float angleThreshold;
 	float multifyValue;
 
-    Quaternion shootDirection;
     float rotateSpeed = 50f;
 	
 	// speed will return to normal after resetTime
@@ -237,6 +236,7 @@ public class BallFly : MonoBehaviour {
         Vector2 position = new Vector3(0, 2, 0);
         AudioSource.PlayClipAtPoint(winAudio, position);
         Instantiate(star, position, Quaternion.identity);
+        GameUIHelper.Instance.DrawHint("吃掉星星，立即过关");
     }
 
     void Reset()

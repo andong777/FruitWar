@@ -9,6 +9,7 @@ public class FireBall : MonoBehaviour {
 		if (other.gameObject.tag == "Pad"){
 			Debug.Log("get fireball");
             GameUIHelper.Instance.DrawProperty(GetComponent<SpriteRenderer>().sprite);
+            GameUIHelper.Instance.DrawHint("获得隐身药水");
             // set ball to fireball
             GameObject.Find("Ball").SendMessage("MakeFireBall", time);
 		}

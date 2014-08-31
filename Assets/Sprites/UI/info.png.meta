@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 5e726f951e4833745881830a74fb25df
+guid: 9637fae194a2a2942b0d0da98287c51c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: fallbackground
-    21300002: game_fall
+    21300000: info
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -24,12 +23,12 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 2048
+  maxTextureSize: 1024
   textureSettings:
-    filterMode: 1
-    aniso: 1
+    filterMode: -1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -39,7 +38,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []

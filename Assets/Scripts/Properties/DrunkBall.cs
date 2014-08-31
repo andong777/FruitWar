@@ -11,6 +11,7 @@ public class DrunkBall : MonoBehaviour {
         {
             Debug.Log("get drunkball");
             GameUIHelper.Instance.DrawProperty(GetComponent<SpriteRenderer>().sprite);
+            GameUIHelper.Instance.DrawHint("喝醉了");
             GameObject.Find("Ball").SendMessage("MakeDrunkBall", time);
         }
     }

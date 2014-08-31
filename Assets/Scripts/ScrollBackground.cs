@@ -40,7 +40,7 @@ public class ScrollBackground : MonoBehaviour {
         float screenHalfWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0)).x;
         float pos = theSprite.bounds.size.x / 2 - screenHalfWidth;
         bg1.position = new Vector3(pos, 0, 0);
-        width = theSprite.bounds.size.x * ratio;    // don't forget to multiply by ratio
+        width = (theSprite.bounds.size.x - 0.1f ) * ratio;    // don't forget to multiply by ratio
         bg2.position = new Vector3(pos + width, 0, 0);
 
 	}
