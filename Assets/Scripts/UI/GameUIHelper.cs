@@ -37,7 +37,7 @@ public class GameUIHelper : MonoBehaviour {
 
     public void DrawTargetScore(int targetScore)
     {
-        targetScoreText.text = "目标分数：\n" + targetScore;
+        targetScoreText.text = "目标分数： " + targetScore;
     }
 
     public void DrawScore(int stageScore)

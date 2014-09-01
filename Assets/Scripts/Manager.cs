@@ -3,7 +3,10 @@ using System.Collections;
 
 public class Manager {
 
-    const int initialLifeNum = 3;
+    // youmi ad object
+    public static AndroidJavaObject youmi = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
+
+    const int initialLifeNum = 5;
     const int scorePerBrick = 100;
 
     // game variavles

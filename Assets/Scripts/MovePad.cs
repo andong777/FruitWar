@@ -16,7 +16,11 @@ public class MovePad : MonoBehaviour {
 #if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_METRO
         float input = Input.GetAxis ("Horizontal");
 #elif UNITY_ANDROID || UNITY_IPHONE || UNITY_WP8
-        float input = -1 * Input.acceleration.y;    // because it's landscape
+        // because it's landscape
+        float input = Input.acceleration.y;
+        if (Mathf.Abs(input) > 1)
+            input = Mathf.Sign(input);
+        input *= -3f;
 #else
         float input = 0f;   // not supported yet
 #endif

@@ -14,5 +14,14 @@ public class MenuUIHelper : MonoBehaviour {
 
         Button helpButton = GameObject.Find("HelpButton").GetComponent<Button>();
         helpButton.onClick.AddListener(() => { Manager.Help(); });
+
+        Button exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
+        exitButton.onClick.AddListener(() => { Application.Quit(); });
+
+        // ad
+#if UNITY_ANDROID
+        Manager.youmi.Call("addBanner");
+#endif
+
     }
 }

@@ -6,12 +6,27 @@ Fruit War (水果大作战)
 A cartoon-style 2D breakout game using Unity and its native 2D technology. 
 Built with Unity 4.6 Beta on Windows 7 64-bit.
 
+可爱的小动物们发现了一个到处都是水果的神秘花园，这可把他们乐坏了。不过，要想吃到水果可没那么容易，快来帮帮他们吧。
+
+## For 4399
+操作指南：
+左右方向键移动下面的小动物。
+鼠标单击发射上面的小动物或发射子弹。
+不断移动接住掉落的水果，吃到道具也会有相应的变化。
+达到目标分后，吃掉五星即可过关。
+
 # To-dos
 
 - deploy and add advertisement.
-- complete introduction of properties.
 
 # Release Notes
+
+## 9/1
+- test on Meizu MX 2 and modify UI.
+- add youmi advertisement.
+- add introduction and redesign logo.
+- add exit button.
+- release version 1.4.
 
 ## 8/31 A.M.
 - add hint bar.

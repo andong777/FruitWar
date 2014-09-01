@@ -8,14 +8,14 @@ public class InfoButton : MonoBehaviour {
     public Sprite infoSprite;
     public Sprite noInfoSprite;
 
-    bool enabled;
+    bool banned;
     Color hideColor = new Color(1, 1, 1, 0);
     Color showColor;
 
     void Start()
     {
         // start enabled
-        enabled = true;
+        banned = false;
         showColor = hintText.color;
 
         GetComponent<Button>().onClick.AddListener(HandleInfo);
@@ -23,16 +23,16 @@ public class InfoButton : MonoBehaviour {
 
     void HandleInfo()
     {
-        enabled = !enabled;
-        if (enabled)
-        {
-            GetComponent<Image>().sprite = infoSprite;
-            hintText.color = showColor;
-        }
-        else
+        banned = !banned;
+        if (banned)
         {
             GetComponent<Image>().sprite = noInfoSprite;
             hintText.color = hideColor;
+        }
+        else
+        {
+            GetComponent<Image>().sprite = infoSprite;
+            hintText.color = showColor;
         }
     }
 
