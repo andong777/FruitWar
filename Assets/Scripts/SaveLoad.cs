@@ -12,7 +12,7 @@ public class SaveLoad {
     int cursor; // cursor to read records
 
     private SaveLoad() {
-        cursor = start;
+        ResetCursor();
     }
 
     public static SaveLoad Instance
@@ -33,7 +33,7 @@ public class SaveLoad {
 
     public void ResetCursor()
     {
-        cursor = start;
+        cursor = start - recordsPerPage;
     }
 
     public void Save(Data data)
@@ -79,16 +79,16 @@ public class SaveLoad {
     {
         int i = 0;
         var page = new Data[recordsPerPage];
+        if (cursor - recordsPerPage >= start)       
+            cursor -= recordsPerPage;
         Debug.Log("---Prev---"+cursor);
-        cursor = cursor - recordsPerPage >= start ? cursor - recordsPerPage : start;
         while (i < recordsPerPage && PlayerPrefs.HasKey(cursor + "Name"))
         {
-            string name = PlayerPrefs.GetString(cursor + "Name");
-            int score = PlayerPrefs.GetInt(cursor + "Score");
-            page[i++] = new Data(cursor, name, score);
-            
-            cursor ++;
-        }
+            int idx = cursor + i;
+            string name = PlayerPrefs.GetString(idx + "Name");
+            int score = PlayerPrefs.GetInt(idx + "Score");
+            page[i++] = new Data(idx, name, score);
+        }        
         return page;
     }
 
@@ -96,14 +96,15 @@ public class SaveLoad {
     {
         int i=0;
         var page = new Data[recordsPerPage];
+        if (PlayerPrefs.HasKey((cursor + recordsPerPage) + "Name"))
+            cursor += recordsPerPage;
         Debug.Log("---Next---"+cursor);
         while (i < recordsPerPage && PlayerPrefs.HasKey(cursor + "Name"))
         {
-            string name = PlayerPrefs.GetString(cursor + "Name");
-            int score = PlayerPrefs.GetInt(cursor + "Score");
-            page[i++] = new Data(cursor, name, score);
-            
-            cursor ++;
+            int idx = cursor + i;
+            string name = PlayerPrefs.GetString(idx + "Name");
+            int score = PlayerPrefs.GetInt(idx + "Score");
+            page[i++] = new Data(idx, name, score);
         }
         return page;
     }
