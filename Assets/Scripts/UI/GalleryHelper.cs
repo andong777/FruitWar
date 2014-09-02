@@ -26,8 +26,9 @@ public class GalleryHelper : MonoBehaviour {
         prevImage = prev.GetComponent<Image>();
         nextImage = next.GetComponent<Image>();
         prevImage.color = hideColor;    // hide prev button at the beginning
-
+#if UNITY_ANDROID
         Manager.youmi.Call("showSpot");
+#endif
     }
 
     void Prev()

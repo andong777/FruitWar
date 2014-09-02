@@ -21,12 +21,23 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 
 # Release Notes
 
+## 9/2
+- fix several bugs about score:
+	1. score is added twice when player quits.
+	2. score doesn't run.
+	3. total score doesn't clear when creating another game.
+	4. prev button works incorrectly.
+- improvement:
+	1. eating skull should die.
+	2. eating fruit plays audio.
+	3. remove annoying audio of rank scene.
+- release version 1.4.
+
 ## 9/1
 - test on Meizu MX 2 and modify UI.
 - add youmi advertisement.
 - add introduction and redesign logo.
 - add exit button.
-- release version 1.4.
 
 ## 8/31 A.M.
 - add hint bar.

@@ -79,8 +79,8 @@ public class SaveLoad {
     {
         int i = 0;
         var page = new Data[recordsPerPage];
-        Debug.Log("---Prev---");
-        cursor = cursor - recordsPerPage > start ? cursor - recordsPerPage - 1 : start;
+        Debug.Log("---Prev---"+cursor);
+        cursor = cursor - recordsPerPage >= start ? cursor - recordsPerPage : start;
         while (i < recordsPerPage && PlayerPrefs.HasKey(cursor + "Name"))
         {
             string name = PlayerPrefs.GetString(cursor + "Name");
@@ -96,7 +96,7 @@ public class SaveLoad {
     {
         int i=0;
         var page = new Data[recordsPerPage];
-        Debug.Log("---Next---");
+        Debug.Log("---Next---"+cursor);
         while (i < recordsPerPage && PlayerPrefs.HasKey(cursor + "Name"))
         {
             string name = PlayerPrefs.GetString(cursor + "Name");

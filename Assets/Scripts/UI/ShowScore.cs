@@ -14,8 +14,9 @@ public class ShowScore : MonoBehaviour {
     int endScore;
 
 	void Start () {
-
-
+#if UNITY_ANDROID
+        Manager.youmi.Call("showSpot");
+#endif
         endScore = Manager.GetTotalScore();
         startScore = endScore - Manager.GetStageScore();
 

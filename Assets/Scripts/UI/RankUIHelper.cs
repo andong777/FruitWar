@@ -15,9 +15,9 @@ public class RankUIHelper : MonoBehaviour {
     {
         prevButton.onClick.AddListener(HandlePrev);
         nextButton.onClick.AddListener(HandleNext);
-
+#if UNITY_ANDROID
         Manager.youmi.Call("showSpot");
-
+#endif
         SaveLoad.Instance.ResetCursor();
         HandleNext();
     }

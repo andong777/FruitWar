@@ -4,8 +4,9 @@ using System.Collections;
 public class Manager {
 
     // youmi ad object
+#if UNITY_ANDROID
     public static AndroidJavaObject youmi = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
-
+#endif
     const int initialLifeNum = 5;
     const int scorePerBrick = 100;
 
@@ -61,6 +62,7 @@ public class Manager {
 
 	public static void AddScoreByBrick(int brickNum) {
 		stageScore += brickNum * scorePerBrick;
+        totalScore += brickNum * scorePerBrick;
 		if (stageScore >= targetScore && !won) {
             won = true;
             GameObject.Find("Ball").SendMessage("DropStar");
@@ -128,6 +130,7 @@ public class Manager {
 
     public static void Game()
     {
+        totalScore = 0; // fix bug
         Application.LoadLevel("Game");
         ResetStage();
         lifeNum = initialLifeNum;
@@ -161,15 +164,11 @@ public class Manager {
 
     public static void Break()
     {
-        // add stage score to total score
-        totalScore += stageScore;
         Application.LoadLevel("Break");
     }
 
     public static void End()
     {
-        // should also add stage score to total score
-        totalScore += stageScore;
         Application.LoadLevel("End");
     }
 

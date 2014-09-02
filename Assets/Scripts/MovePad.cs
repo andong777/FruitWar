@@ -17,10 +17,9 @@ public class MovePad : MonoBehaviour {
         float input = Input.GetAxis ("Horizontal");
 #elif UNITY_ANDROID || UNITY_IPHONE || UNITY_WP8
         // because it's landscape
-        float input = Input.acceleration.y;
+        float input = Input.acceleration.x;
         if (Mathf.Abs(input) > 1)
             input = Mathf.Sign(input);
-        input *= -3f;
 #else
         float input = 0f;   // not supported yet
 #endif
@@ -54,7 +53,6 @@ public class MovePad : MonoBehaviour {
 		// if it is a brick, do KillBrick
 		else if(other.gameObject.tag == "FallBrick"){
             other.audio.Play();
-			Destroy(other.gameObject);
 			Manager.KillBrick();
 		}
 	}

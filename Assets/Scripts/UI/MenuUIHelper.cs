@@ -20,7 +20,7 @@ public class MenuUIHelper : MonoBehaviour {
 
         // ad
 #if UNITY_ANDROID
-        Manager.youmi.Call("addBanner");
+        // Manager.youmi.Call("addBanner");
 #endif
 
     }
