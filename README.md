@@ -18,9 +18,10 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 不断移动接住掉落的水果，吃到道具也会有相应的变化。
 达到目标分后，吃掉五星即可过关。
 
-# To-dos
+# Download Links
+- 应用宝：http://android.myapp.com/myapp/detail.htm?apkName=com.andong777.fruitwar
 
-- deploy and add advertisement.
+# To-dos
 
 # Release Notes
 
