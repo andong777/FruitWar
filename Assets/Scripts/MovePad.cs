@@ -54,6 +54,7 @@ public class MovePad : MonoBehaviour {
 		else if(other.gameObject.tag == "FallBrick"){
             other.audio.Play();
 			Manager.KillBrick();
+            other.gameObject.tag = "NoBrick";   // fix bug that brick is counted twice
 		}
 	}
 

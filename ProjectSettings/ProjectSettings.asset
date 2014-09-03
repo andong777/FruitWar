@@ -16,8 +16,8 @@ PlayerSettings:
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 576
-  defaultScreenWidthWeb: 800
-  defaultScreenHeightWeb: 600
+  defaultScreenWidthWeb: 640
+  defaultScreenHeightWeb: 480
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   m_ActiveColorSpace: 0
@@ -69,7 +69,7 @@ PlayerSettings:
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: fe7d69017def14143ac3416164be4c08
-  iPhoneBundleVersion: 1.3
+  iPhoneBundleVersion: 1.4
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1

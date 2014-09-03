@@ -6,6 +6,9 @@ Fruit War (水果大作战)
 A cartoon-style 2D breakout game using Unity and its native 2D technology. 
 Built with Unity 4.6 Beta on Windows 7 64-bit.
 
+一款卡通风格的2D打砖块类游戏。游戏以动物和水果味主要角色。玩家操纵动物形状的档板和球，击打水果形状的砖块，获得分数奖励。画面卡通可爱，玩法轻松有趣但也有一定难度。
+
+## 游戏简介：
 可爱的小动物们发现了一个到处都是水果的神秘花园，这可把他们乐坏了。不过，要想吃到水果可没那么容易，快来帮帮他们吧。
 
 ## For 4399
@@ -20,6 +23,11 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 - deploy and add advertisement.
 
 # Release Notes
+
+## 9/3
+- fix brick couting bug introduced in v1.4.
+- fix mini ad banner bug.
+- release version 1.5.
 
 ## 9/2
 - fix several bugs about score:
