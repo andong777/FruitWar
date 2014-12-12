@@ -15,8 +15,11 @@ public class MenuUIHelper : MonoBehaviour {
         Button helpButton = GameObject.Find("HelpButton").GetComponent<Button>();
         helpButton.onClick.AddListener(() => { Manager.Help(); });
 
+#if UNITY_ANDROID
+		// hide exit button because it is not working.
         Button exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
         exitButton.onClick.AddListener(() => { Application.Quit(); });
+#endif
 
         // ad
 #if UNITY_ANDROID

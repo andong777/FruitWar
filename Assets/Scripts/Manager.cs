@@ -7,7 +7,7 @@ public class Manager {
 #if UNITY_ANDROID
     public static AndroidJavaObject youmi = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
 #endif
-    const int initialLifeNum = 5;
+    const int initialLifeNum = 3;
     const int scorePerBrick = 100;
 
     // game variavles
@@ -134,7 +134,6 @@ public class Manager {
         Application.LoadLevel("Game");
         ResetStage();
         lifeNum = initialLifeNum;
-
     }
 
 	public static void ResetStage () {

@@ -26,6 +26,12 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 
 # Release Notes
 
+## 12/12
+- port this project from Unity 4.6 beta to 4.6 final.
+- re-design UI layout based on new comprehension of uGUI.
+- hide exit button and the corresponding code when built for web.
+- fix the bug that life number display is different from the internal number.
+
 ## 9/3
 - fix brick couting bug introduced in v1.4.
 - fix mini ad banner bug.

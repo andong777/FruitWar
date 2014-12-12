@@ -140,8 +140,8 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_TargetGraphic: {fileID: 131217744}
   m_Interactable: 1
+  m_TargetGraphic: {fileID: 131217744}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: .588}
   m_Sprite: {fileID: 21300000, guid: db5a4ce75c911f44d8377befd89e06fd, type: 3}
   m_Type: 0
@@ -189,9 +189,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1935029424}
   m_RootOrder: 0
-  m_AnchorMin: {x: .873000026, y: .153535947}
-  m_AnchorMax: {x: .873000026, y: .153535947}
-  m_AnchoredPosition: {x: -48, y: 46}
+  m_AnchorMin: {x: .800000012, y: .200000003}
+  m_AnchorMax: {x: .800000012, y: .200000003}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &265034836
@@ -253,6 +253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
 --- !u!4 &265034840
 Transform:
   m_ObjectHideFlags: 0
@@ -448,10 +450,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1344842529}
   m_RootOrder: 0
-  m_AnchorMin: {x: .0443146229, y: 0}
-  m_AnchorMax: {x: .941000044, y: .709299088}
-  m_AnchoredPosition: {x: 3.9848001, y: 31}
-  m_SizeDelta: {x: -144, y: -213}
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 150}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &766976702
 MonoBehaviour:
@@ -465,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9e42332c02af03b4395b0c3b652e4c80, type: 3}
@@ -602,7 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 21300000, guid: 179832249cdc93d4386d50843f9b9c6c, type: 3}
   m_Type: 0
@@ -625,10 +627,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1935029424}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 150, y: 20}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchorMin: {x: .200000003, y: .5}
+  m_AnchorMax: {x: .200000003, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 121, y: 152}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1195607870
 MonoBehaviour:
@@ -682,10 +684,10 @@ RectTransform:
   - {fileID: 766976701}
   m_Father: {fileID: 1935029424}
   m_RootOrder: 3
-  m_AnchorMin: {x: .269409865, y: .30400002}
-  m_AnchorMax: {x: .812637031, y: 1}
-  m_AnchoredPosition: {x: .5, y: 13.5}
-  m_SizeDelta: {x: -44, y: -13}
+  m_AnchorMin: {x: .5, y: 1}
+  m_AnchorMax: {x: .5, y: 1}
+  m_AnchoredPosition: {x: 50, y: -150}
+  m_SizeDelta: {x: 350, y: 400}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1344842530
 MonoBehaviour:
@@ -699,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: .588235319}
   m_Sprite: {fileID: 21300000, guid: 931e26eda76ede34988e0c6828e589f6, type: 3}
   m_Type: 0
@@ -869,6 +871,8 @@ Canvas:
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
 --- !u!114 &1700295645
@@ -879,11 +883,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1700295641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -990768443, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Resolution: {x: 1280, y: 800}
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1 &1911430924
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,9 +928,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1935029424}
   m_RootOrder: 1
-  m_AnchorMin: {x: .0890000015, y: .114267983}
-  m_AnchorMax: {x: .0890000015, y: .114267983}
-  m_AnchoredPosition: {x: 64, y: 48}
+  m_AnchorMin: {x: .200000003, y: .200000003}
+  m_AnchorMax: {x: .200000003, y: .200000003}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1911430926
@@ -968,8 +980,8 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_TargetGraphic: {fileID: 1911430928}
   m_Interactable: 1
+  m_TargetGraphic: {fileID: 1911430928}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -987,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: .588}
   m_Sprite: {fileID: 21300000, guid: 58669362cf109dc4a8b0db87022d2906, type: 3}
   m_Type: 0
@@ -1038,10 +1050,10 @@ RectTransform:
   - {fileID: 1344842529}
   m_Father: {fileID: 1700295642}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: .100000001, y: .100000001}
+  m_AnchorMax: {x: .899999976, y: .899999976}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1935029425
 MonoBehaviour:
@@ -1055,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 21300000, guid: 562be357fcdff494fa443d4574e61804, type: 3}
   m_Type: 0
