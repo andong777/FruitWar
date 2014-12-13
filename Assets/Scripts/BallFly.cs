@@ -41,7 +41,7 @@ public class BallFly : MonoBehaviour {
 	void Update () {
 		// Control the ball.
 #if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_METRO
-		bool fire = Input.GetKeyUp(KeyCode.Space);
+		bool fire = Input.GetButtonUp("Fire1");
 #elif UNITY_ANDROID || UNITY_IPHONE || UNITY_WP8
         bool fire = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended;
 #else

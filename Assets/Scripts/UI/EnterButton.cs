@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class EnterButton : MonoBehaviour {
 
     public Text input;
-    string placeHolder = "请输入您的大名";
+	string placeHolder = "请输入您的大名";
 
     void Start()
     {

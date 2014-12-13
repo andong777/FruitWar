@@ -26,6 +26,12 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 
 # Release Notes
 
+## 12/13
+- fix a brick-counting bug due to tag defination.
+- add hint text when player loses. 
+- resolve missing sprites.
+- add text description of properties.
+
 ## 12/12
 - port this project from Unity 4.6 beta to 4.6 final.
 - re-design UI layout based on new comprehension of uGUI.
