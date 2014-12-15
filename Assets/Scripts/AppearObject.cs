@@ -17,10 +17,8 @@ public class AppearObject : MonoBehaviour {
         destPos = rectTransform.position.x;
         var canvas = GameObject.Find("Canvas").GetComponent<RectTransform>();
         beginPos = canvas.position.x;
-        if (fromLeft)
-            beginPos -= canvas.rect.width / 2 + rectTransform.rect.width;
-        else
-            beginPos += canvas.rect.width / 2 + rectTransform.rect.width;
+		float dist = canvas.rect.width / 2 + rectTransform.rect.width / 2;
+		beginPos += (fromLeft ? -1 : 1) * dist;
         rectTransform.position = new Vector3(beginPos, rectTransform.position.y, 0);
         StartCoroutine("Appearing");
     

@@ -23,8 +23,16 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 - 百度手机助手：http://shouji.baidu.com/game/item?docid=6950567
 
 # To-dos
+- 排行榜不能输入。
+- 道具显示大小不对。
+- 失败界面美化。
 
 # Release Notes
+
+## 12/15
+- fix the bug that text field can't type in.
+- change the size of properties.
+- beautify the end scene.
 
 ## 12/13
 - fix a brick-counting bug due to tag defination.
