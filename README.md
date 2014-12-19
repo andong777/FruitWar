@@ -11,8 +11,7 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 ## 游戏简介：
 可爱的小动物们发现了一个到处都是水果的神秘花园，这可把他们乐坏了。不过，要想吃到水果可没那么容易，快来帮帮他们吧。
 
-## For 4399
-操作指南：
+## 操作指南：
 左右方向键移动下面的小动物。
 鼠标单击发射上面的小动物或发射子弹。
 不断移动接住掉落的水果，吃到道具也会有相应的变化。
@@ -23,11 +22,12 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 - 百度手机助手：http://shouji.baidu.com/game/item?docid=6950567
 
 # To-dos
-- 排行榜不能输入。
-- 道具显示大小不对。
-- 失败界面美化。
+
 
 # Release Notes
+
+## 12/19
+- add filter of sensitive words. 
 
 ## 12/15
 - fix the bug that text field can't type in.
