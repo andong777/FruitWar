@@ -32,6 +32,8 @@ public class BallFly : MonoBehaviour {
     float startTime;
 
     bool drunk;
+
+	bool verticalHint = false;
 	
 	void Start () {
         Reset();
@@ -69,6 +71,7 @@ public class BallFly : MonoBehaviour {
 	/* 	This method is to avoid the situations below:
 	 * 	1. where ball flies too slow or too fast after collision
 	 * 	2. where ball flies horizontally
+	 *  3. where ball flies vertically
 	 */
 	void FixedUpdate () {
         
@@ -93,6 +96,13 @@ public class BallFly : MonoBehaviour {
 				// Debug.Log("Angle amendment takes effect: "+angle);
 				float amend = Mathf.Sign(velocity.y) * multifyValue;
 				rigidbody2D.velocity = velocity + new Vector3(0, amend, 0);
+			}
+
+			// to detect problem 3 and hint
+			angle = Mathf.Atan(velocity.x / velocity.y) * Mathf.Rad2Deg;
+			if (Mathf.Abs(angle) < angleThreshold && !verticalHint) {
+				GameUIHelper.Instance.DrawHint("尝试在球接触挡板时左右移动！", 2f);
+				verticalHint = true;
 			}
 
             // drunk ball mode
@@ -236,7 +246,7 @@ public class BallFly : MonoBehaviour {
         Vector2 position = new Vector3(0, 2, 0);
         AudioSource.PlayClipAtPoint(winAudio, position);
         Instantiate(star, position, Quaternion.identity);
-        GameUIHelper.Instance.DrawHint("吃掉星星，立即过关");
+        GameUIHelper.Instance.DrawHint("吃掉星星，立即过关", 5f, blink: true);
     }
 
     void Reset()

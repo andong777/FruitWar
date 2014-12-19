@@ -80,12 +80,26 @@ public class GameUIHelper : MonoBehaviour {
         if (Time.frameCount % 50 == 0 && Time.time > hintDisappearTime)
         {
             hintText.text = "";
+			StopAllCoroutines();
         }
     }
 
-    public void DrawHint(string hint)
+	public void DrawHint(string hint, float interval = 3f, bool blink = false)
     {
-        hintDisappearTime = Time.time + 3f;
+        hintDisappearTime = Time.time + interval;
         hintText.text = hint;
+		if(blink){
+			StartCoroutine(blinkCoroutine(hint));
+		}
     }
+
+	IEnumerator blinkCoroutine(string text)
+	{
+		while (true) {
+			GameUIHelper.Instance.DrawHint(text);
+			yield return new WaitForSeconds(1f);
+			GameUIHelper.Instance.DrawHint("");
+			yield return new WaitForSeconds(1f);
+		}
+	}
 }

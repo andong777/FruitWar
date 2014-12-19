@@ -28,6 +28,10 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 
 ## 12/19
 - add filter of sensitive words. 
+- add hint when the ball moves vertically.
+- add blink effect when star appears.
+- fix the bug that a property can be caught twice.
+- modify the size of some sprites.
 
 ## 12/15
 - fix the bug that text field can't type in.

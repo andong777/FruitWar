@@ -46,6 +46,7 @@ public class MovePad : MonoBehaviour {
 		// if it is a property, eat it
 		if(other.gameObject.tag == "Property" || other.gameObject.tag == "Star"){
 			Debug.Log("pad gets a property");
+			other.gameObject.tag = "NoProperty";	// fix the bug that a property can be caught twice
             if(other.audio!=null)
                 other.audio.Play();
             // let bottom wall recycle it
@@ -54,7 +55,7 @@ public class MovePad : MonoBehaviour {
 		else if(other.gameObject.tag == "FallBrick"){
             other.audio.Play();
 			Manager.KillBrick();
-            other.gameObject.tag = "NoBrick";   // fix bug that brick is counted twice
+            other.gameObject.tag = "NoBrick";   // fix the bug that brick is counted twice
 		}
 	}
 
