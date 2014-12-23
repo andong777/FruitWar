@@ -18,8 +18,8 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 达到目标分后，吃掉五星即可过关。
 
 # Download Links
-- 应用宝：http://android.myapp.com/myapp/detail.htm?apkName=com.andong777.fruitwar
-- 百度手机助手：http://shouji.baidu.com/game/item?docid=6950567
+- ~~应用宝：http://android.myapp.com/myapp/detail.htm?apkName=com.andong777.fruitwar~~
+- ~~百度手机助手：http://shouji.baidu.com/game/item?docid=6950567~~
 
 # To-dos
 
