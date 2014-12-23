@@ -19,23 +19,25 @@ public class RankUIHelper : MonoBehaviour {
         Manager.youmi.Call("showSpot");
 #endif
         SaveLoad.Instance.ResetCursor();
-        HandleNext();
     }
 
     void Format(SaveLoad.Data[] data)
     {
-        var noBuilder = new System.Text.StringBuilder();
+		if (data == null)
+			return;
+
+        var idBuilder = new System.Text.StringBuilder();
         var nameBuilder = new System.Text.StringBuilder();
         var scoreBuilder = new System.Text.StringBuilder();
 
         for (int i = 0; i < data.Length && data[i].score > 0; i++)
         {
-            noBuilder.Append(data[i].no + "\n");
+            idBuilder.Append(data[i].id + "\n");
             nameBuilder.Append(data[i].name + "\n");
             scoreBuilder.Append(data[i].score + "\n");
         }
 
-        noText.text = noBuilder.ToString();
+        noText.text = idBuilder.ToString();
         nameText.text = nameBuilder.ToString();
         scoreText.text = scoreBuilder.ToString();
     }
@@ -43,12 +45,12 @@ public class RankUIHelper : MonoBehaviour {
     void HandlePrev()
     {
         var page = SaveLoad.Instance.Prev();
-        Format(page);
+		Format (page);
     }
 
     void HandleNext()
     {
         var page = SaveLoad.Instance.Next();
-        Format(page);
+		Format (page);
     }
 }

@@ -23,8 +23,12 @@ Built with Unity 4.6 Beta on Windows 7 64-bit.
 
 # To-dos
 
-
 # Release Notes
+
+## 12/23
+- refactor SaveLoad and move the highscore list to SAE.
+- implement client side functionality.
+- hide the property when eaten.
 
 ## 12/19
 - add filter of sensitive words. 

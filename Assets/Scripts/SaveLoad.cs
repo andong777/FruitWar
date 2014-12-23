@@ -1,154 +1,142 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using LitJson;
 
-public class SaveLoad {
+public class SaveLoad : MonoBehaviour {
 
-    private static SaveLoad _instance = new SaveLoad();
-    private static object _lock = new object();
-
-    const int start = 1;
+    private static SaveLoad _instance = null;
+    const int start = 0;
     const int recordsPerPage = 5;
-    const int maxRecords = 30;
+	const string URL = "http://fruitwarrank.sinaapp.com/scores";
+
     int cursor; // cursor to read records
+	List<Data> data = null;
 
-    private SaveLoad() {
-        ResetCursor();
-    }
-
-    public static SaveLoad Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                lock (_lock)
-                {
-                    if (_instance == null)
-                        _instance = new SaveLoad();
-                }
-            }
-            return _instance;
-        }
-    }
+	public static SaveLoad Instance {
+		get
+		{
+			if (_instance == null)
+			{                                   
+				GameObject go = new GameObject("SaveLoadGameObject");
+				DontDestroyOnLoad(go);
+				_instance = go.AddComponent<SaveLoad>();
+			}
+			return _instance;
+		}
+	}
 
     public void ResetCursor()
     {
         cursor = start - recordsPerPage;
+		Load ();
     }
 
     public void Save(Data data)
     {
         if (data.score <= 0)    // invalid record
             return;
-        string oldName = data.name;
-        int oldScore = data.score;
-        Debug.Log("Save: " + oldName + " " + oldScore);
-        int i = start;
-        while (i <= maxRecords && PlayerPrefs.HasKey(i + "Name"))
-        {
-            
-            int score = PlayerPrefs.GetInt(i + "Score");
-            if (oldScore > score)
-            {
-                string name = PlayerPrefs.GetString(i + "Name");
-                PlayerPrefs.SetString(i + "Name", oldName);
-                PlayerPrefs.SetInt(i + "Score", oldScore);
-                oldName = name;
-                oldScore = score;
-            }
-            i++;
-        }
-
-        PlayerPrefs.SetString(i + "Name", oldName);
-        PlayerPrefs.SetInt(i + "Score", oldScore);
+        
+		Debug.Log ("--- Save ---");
+		var jsonString = JsonMapper.ToJson(data);
+		Debug.Log (jsonString);
+		var headers = new Dictionary<string, string> ();
+		headers.Add ("Content-Type", "application/json");
+		var scores = new WWW (URL, new System.Text.UTF8Encoding ().GetBytes (jsonString), headers);
+		StartCoroutine (WaitForPost (scores));
     }
+
+	IEnumerator WaitForPost(WWW www){
+		yield return www;
+		Debug.Log (www.text);
+	}
+
+	public void Load()
+	{
+		Debug.Log("--- Load ---");
+		var scores = new WWW (URL);
+
+		StartCoroutine(WaitForGet(scores));
+	}
+
+	IEnumerator WaitForGet(WWW www){
+		yield return www;
+		if (www.error == null && www.isDone) {
+			var dataList = JsonMapper.ToObject<DataList>(www.text);
+			data = dataList.data;
+			GameObject.Find("Background").SendMessage("HandleNext");
+		}else{
+			Debug.Log ("Failed to connect to server!");
+			Debug.Log (www.error);
+		}
+	}
 
     public int HighScore()
     {
-        if (PlayerPrefs.HasKey("1Name"))
-        {
-            return PlayerPrefs.GetInt("1Score");
-        }
-        else
-        {
-            return 0;
-        }
+        if (data == null || data.Count == 0)
+			return 0;
+		return data [0].score;
     }
 
     public Data[] Prev()
     {
-        int i = 0;
-        var page = new Data[recordsPerPage];
-        if (cursor - recordsPerPage >= start)       
-            cursor -= recordsPerPage;
-        Debug.Log("---Prev---"+cursor);
-        while (i < recordsPerPage && PlayerPrefs.HasKey(cursor + "Name"))
-        {
-            int idx = cursor + i;
-            string name = PlayerPrefs.GetString(idx + "Name");
-            int score = PlayerPrefs.GetInt(idx + "Score");
-            page[i++] = new Data(idx, name, score);
-        }        
-        return page;
+		if (data == null || data.Count == 0)
+			return null;
+
+		if (cursor - recordsPerPage >= start)
+			cursor = cursor - recordsPerPage;
+
+		int size = cursor - start + 1 < recordsPerPage ? cursor - start + 1 : recordsPerPage;
+		var page = new Data[size];
+		
+		for (int i = 0; i < size; i++) {
+			int idx = cursor + i;
+			page[i] = new Data(idx + 1, data[idx].name, data[idx].score);
+		}
+
+		return page;
     }
 
     public Data[] Next()
     {
-        int i=0;
-        var page = new Data[recordsPerPage];
-        if (PlayerPrefs.HasKey((cursor + recordsPerPage) + "Name"))
-            cursor += recordsPerPage;
-        Debug.Log("---Next---"+cursor);
-        while (i < recordsPerPage && PlayerPrefs.HasKey(cursor + "Name"))
-        {
-            int idx = cursor + i;
-            string name = PlayerPrefs.GetString(idx + "Name");
-            int score = PlayerPrefs.GetInt(idx + "Score");
-            page[i++] = new Data(idx, name, score);
-        }
-        return page;
-    }
+		if (data == null || data.Count == 0)
+			return null;
 
-    // only for test
-    public void Dump()
-    {
-        Clean();
-        Save(new Data("an", 10000));
-        Save(new Data("dong", 20000));
-        Save(new Data("qi", 15000));
-        Save(new Data("andong", 30000));
-        Save(new Data("dongan", 35000));
-        Save(new Data("andong777", 70000));
-    }
+		if (cursor + recordsPerPage < data.Count)
+			cursor = cursor + recordsPerPage;
 
-    // only for test
-    public void Clean()
-    {
-        int i = 0;
-        while(PlayerPrefs.HasKey(i+"Name")){
-            PlayerPrefs.DeleteKey(i+"Name");
-            PlayerPrefs.DeleteKey(i+"Score");
-            i++;
-        }
+		int size = data.Count - cursor < recordsPerPage ? data.Count - cursor : recordsPerPage;
+		var page = new Data[size];
+
+		for (int i = 0; i < size; i++) {
+			int idx = cursor + i;
+			page[i] = new Data(idx + 1, data[idx].name, data[idx].score);
+		}
+
+		return page;
     }
 
     public struct Data {
-        public int no;
+        public int id;
         public string name;
         public int score;
 
         // for saving
-        public Data (string name, int score){
-            no = 0;   // no use here
-            this.name = name;
-            this.score = score;
+        public Data (string _name, int _score){
+            id = 0;   // no use here
+            name = _name;
+            score = _score;
         }
         // for loading, containing rank number
-        public Data(int no, string name, int score)
+        public Data(int _id, string _name, int _score)
         {
-            this.no = no;
-            this.name = name;
-            this.score = score;
+			id = _id;
+			name = _name;
+			score = _score;
         }
     }
+
+	public class DataList {
+		public List<Data> data;
+	}
 }

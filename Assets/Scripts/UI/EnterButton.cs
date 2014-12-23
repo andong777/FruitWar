@@ -45,7 +45,7 @@ public class EnterButton : MonoBehaviour {
 				filters = filterAsset.text.Split('\n');
 			}
 			foreach(var f in filters){
-				if(name.Trim().Equals(f.Trim(), System.StringComparison.OrdinalIgnoreCase))
+				if(name.Trim().Equals (f.Trim(), System.StringComparison.OrdinalIgnoreCase))
 					return false;
 			}
 		}

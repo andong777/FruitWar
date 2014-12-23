@@ -47,6 +47,7 @@ public class MovePad : MonoBehaviour {
 		if(other.gameObject.tag == "Property" || other.gameObject.tag == "Star"){
 			Debug.Log("pad gets a property");
 			other.gameObject.tag = "NoProperty";	// fix the bug that a property can be caught twice
+			other.gameObject.renderer.enabled = false;	// hide the game object
             if(other.audio!=null)
                 other.audio.Play();
             // let bottom wall recycle it
