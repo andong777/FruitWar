@@ -686,8 +686,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 50, y: -150}
-  m_SizeDelta: {x: 350, y: 400}
+  m_AnchoredPosition: {x: 30, y: -120}
+  m_SizeDelta: {x: 300, y: 350}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1344842530
 MonoBehaviour:
@@ -851,7 +851,6 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:

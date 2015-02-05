@@ -20,11 +20,6 @@ public class ShowScore : MonoBehaviour {
         endScore = Manager.GetTotalScore();
         startScore = endScore - Manager.GetStageScore();
 
-        if (endScore > SaveLoad.Instance.HighScore())
-        {
-            award.sprite = newRecordSprite;
-        }
-
         Debug.Log(startScore + "->" + endScore);
         stop.onClick.AddListener(HandleStop);
 
