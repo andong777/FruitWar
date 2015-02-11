@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using LitJson;
+using UnityEngine.SocialPlatforms;
+using UnityEngine.SocialPlatforms.GameCenter;
 
 public class SaveLoad : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class SaveLoad : MonoBehaviour {
 
     int cursor; // cursor to read records
 	List<Data> data = null;
+	ILeaderboard m_Leaderboard;
 
 	public static SaveLoad Instance {
 		get
@@ -32,36 +34,49 @@ public class SaveLoad : MonoBehaviour {
 		Load ();
     }
 
+	public void authenticate(){
+		Social.localUser.Authenticate(success => {
+			if (success) {
+				Debug.Log ("Authenticated");
+			}
+			else{
+				Debug.Log ("Failed to authenticate with Game Center.");
+			}
+		});
+	}
+
     public void Save(long score)
     {
 		if (score == 0)
 			return;
 
-		Debug.Log ("--- Save ---");
-
-		Social.localUser.Authenticate (success => {
-			if (success) {
-				Debug.Log ("Authentication successful");
-				Social.ReportScore (score, leaderboardID, success2 => {
-					Debug.Log(success2 ? "Reported score successfully" : "Failed to report score");
-				});
-			}
-			else
-				Debug.Log ("Authentication failed");
-		});
+		if(Social.localUser.authenticated){
+			
+			Social.ReportScore(score, leaderboardID, success => {
+				if(success){
+					Debug.Log ("--- Save ---");
+				}
+			});
+		}else{
+			Debug.Log("failed to save");
+		}
     }
 
 	public void Load()
 	{
-		Debug.Log("--- Load ---");
-
-		Social.LoadScores (leaderboardID, scores => {
-			Debug.Log ("Got " + scores.Length + " scores");
-			data = new List<Data>();
-			for(int i=0; i<scores.Length; i++){
-				data[i] = new Data(scores[i].rank, scores[i].userID, scores[i].value);
-			}
-		});
+		if (Social.localUser.authenticated) {
+			Debug.Log("--- Load ---");
+			
+			Social.LoadScores (leaderboardID, scores => {
+				Debug.Log ("Got " + scores.Length + " scores");
+				data = new List<Data>();
+				for(int i=0; i<scores.Length; i++){
+					data[i] = new Data(scores[i].rank, scores[i].userID, scores[i].value);
+				}
+			});
+		}else{
+			Debug.Log("failed to load");
+		}
 	}
 
 //    public long HighScore()
@@ -70,6 +85,18 @@ public class SaveLoad : MonoBehaviour {
 //			return 0;
 //		return int.Parse(data [0].score);
 //    }
+
+	public void DoLeaderboard () {
+//		if(m_Leaderboard == null){
+//			m_Leaderboard = Social.CreateLeaderboard();
+//			m_Leaderboard.id = leaderboardID;  // YOUR CUSTOM LEADERBOARD NAME
+//			m_Leaderboard.LoadScores(result => {
+//				Social.ShowLeaderboardUI();
+//			});
+//		}else{
+			Social.ShowLeaderboardUI();
+//		}
+	}
 
     public Data[] Prev()
     {
