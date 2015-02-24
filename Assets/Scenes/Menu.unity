@@ -331,8 +331,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: -480, y: 300}
+  m_AnchoredPosition: {x: 0, y: 120}
+  m_SizeDelta: {x: -600, y: 200}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &604096389
 MonoBehaviour:
@@ -614,7 +614,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 590b0d8e867035c428cc8b4a9b10cea2,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: d4c09021ec3aca0438e41f8bce754fb2, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 590b0d8e867035c428cc8b4a9b10cea2, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: e45caa5e14b324b4c9c7cbfd8b128563, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -775,10 +775,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 594494725}
   m_RootOrder: 0
-  m_AnchorMin: {x: .200000003, y: .649999976}
-  m_AnchorMax: {x: .800000012, y: .949999988}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: .5, y: 1}
+  m_AnchorMax: {x: .5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -120}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1116872368
 MonoBehaviour:
@@ -793,7 +793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 21300000, guid: a70f5fe1ae2e57f488914b9dfb847b1c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 59647c81c308542c5babae31d1cef6de, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

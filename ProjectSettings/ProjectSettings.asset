@@ -11,7 +11,7 @@ PlayerSettings:
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: andong777
-  productName: "\u6C34\u679C\u5927\u4F5C\u6218"
+  productName: "\u6C34\u679C\u6253\u7816\u5757"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   defaultScreenWidth: 1024
@@ -71,7 +71,7 @@ PlayerSettings:
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: fe7d69017def14143ac3416164be4c08
-  iPhoneBundleVersion: 1.5
+  iPhoneBundleVersion: 1.6
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 1
@@ -84,7 +84,7 @@ PlayerSettings:
   CreateWallpaper: 0
   APKExpansionFiles: 0
   StripUnusedMeshComponents: 0
-  iPhoneSdkVersion: 989
+  iPhoneSdkVersion: 988
   iPhoneTargetOSVersion: 22
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
@@ -109,7 +109,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 2800000, guid: b6eb7e1f3966552438533a1b2ecc0cff, type: 3}
+    - m_Icon: {fileID: 2800000, guid: bf3f5c9860d1e49edb628e4521098026, type: 3}
       m_Size: 128
   m_BuildTargetBatching: []
   webPlayerTemplate: APPLICATION:Default
